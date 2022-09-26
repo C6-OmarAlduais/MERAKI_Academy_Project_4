@@ -7,7 +7,7 @@ const login = (req, res) => {
   const email = req.body.email.toLowerCase();
 userModel
     .findOne({ email })
-    .populate("role", "-_id,-__v")
+    .populate("role")
     .then(async (user) => {
       if (!user) {
         return res.status(404).json({
@@ -23,7 +23,7 @@ userModel
             success: false,
             message: `The password you’ve entered is incorrect`,
           });
-        }
+        } 
         const payload = {
           userId: user._id,
           user: user.firstName,
