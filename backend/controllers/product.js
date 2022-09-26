@@ -31,7 +31,7 @@ const addNewProduct = (req, res) => {
 };
 //--------------------------------- get all products
 const getAllProducts = (req, res) => {
- const userId = req.token.userId;
+  const userId = req.token.userId;
 
   productModel
     .find({})
@@ -56,19 +56,18 @@ const getAllProducts = (req, res) => {
 const getProductById = (req, res) => {
   let _id = req.query.id;
   productModel
-    .find({_id})
+    .find({ _id })
     .then((product) => {
       if (!product) {
-          res.status(404).json({
-            success: false,
-            message: `The product isn't found`,
+        res.status(404).json({
+          success: false,
+          message: `The product isn't found`,
         });
-    } 
-          res.status(200).json({
-            success: true,
-            product,
-        });
-    
+      }
+      res.status(200).json({
+        success: true,
+        product,
+      });
     })
     .catch((err) => {
       res.status(500).json({
@@ -80,49 +79,51 @@ const getProductById = (req, res) => {
 };
 //------------------------------------------udpate product by id
 const updateProductById = (req, res) => {
-    const _id = req.params._id
-    productModel.findOneAndUpdate(_id, req.body, {new:true})
-    .then((product)=>{
-        res.status(201).json({
-            success:true, 
-            message: `Product updated`,
-            product
-        })
+  const _id = req.params._id;
+  productModel
+    .findOneAndUpdate(_id, req.body, { new: true })
+    .then((product) => {
+      res.status(201).json({
+        success: true,
+        message: `Product updated`,
+        product,
+      });
     })
-    .catch((err)=>{
-        res.status(500).json({
-            success:false,
-            message:`Server error`,
-            err:err.message
-        })
-    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server error`,
+        err: err.message,
+      });
+    });
 };
 
 //--------------------------------------- delete product by id
 
 const deleteProductById = (req, res) => {
-    const _id = req.params.id
-    productModel.findByIdAndDelete(_id)
-    .then((product)=>{
-        if(!product){
-            res.status(404).json({
-                success:false,
-                message: `The product isn't found`
-            })
-        }
-        res.status(200).json({
-            success:true,
-            message:`Product deleted`
-        })
+  const _id = req.params.id;
+  productModel
+    .findByIdAndDelete(_id)
+    .then((product) => {
+      if (!product) {
+        res.status(404).json({
+          success: false,
+          message: `The product isn't found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `Product deleted`,
+      });
     })
-    .catch((err)=>{
-        res.status(500).json({
-            success:false,
-            message:`Server error`,
-            err:err.message
-        })
-    })
-}
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server error`,
+        err: err.message,
+      });
+    });
+};
 
 module.exports = {
   addNewProduct,
