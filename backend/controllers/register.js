@@ -14,7 +14,7 @@ const register = (req, res) => {
     password,
     role,
   });
-  // -----------------------------------
+
   userInstance
     .save()
 

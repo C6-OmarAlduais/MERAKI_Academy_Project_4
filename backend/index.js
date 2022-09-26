@@ -12,7 +12,7 @@ app.use(express.json());
 // Import Routers
 const usersRouter = require('./routes/user')
 const productsRouter = require('./routes/product')
-const rolesRouter = require('./routes/product')
+const rolesRouter = require('./routes/roles')
 
 
 // Routes Middleware

@@ -7,7 +7,6 @@ const addRole = (req, res) => {
         permissions,
     })
     roleInstance.save()
-    console.log(roleInstance)
     .then((role)=>{
         console.log(role);
         res.status(201).json({
