@@ -27,4 +27,6 @@ const addNewProduct = (req, res) => {
     });
 };
 
+
+
 module.exports = {addNewProduct,}
