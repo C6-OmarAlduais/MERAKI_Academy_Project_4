@@ -9,8 +9,8 @@ const productsRouter = express.Router()
 productsRouter.post('/', authentication, authorization("CREATE_PRODUCT"), addNewProduct)
 productsRouter.get('/', authentication, getAllProducts)
 productsRouter.get('/search_1', getProductById)
-productsRouter.put('/:id', updateProductById)
-productsRouter.delete('/:id', deleteProductById)
+productsRouter.put('/:id', authentication, authorization("CREATE_PRODUCT"), updateProductById)
+productsRouter.delete('/:id', authentication, authorization("CREATE_PRODUCT"), deleteProductById)
 productsRouter.post('/:productId/comments', authentication, authorization("CREATE_COMMENTS"), createNewComment)
 
 //-------------------------------------
