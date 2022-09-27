@@ -38,7 +38,7 @@ const createUser = () => {
     
     <input onChange={(e)=>{setLastName(e.target.value)}} type={'text'} placeholder ={'Last Name'}></input>
 
-    <input onChange={(e)=>{setAge(e.target.value)}} type={'text'} placeholder ={'Age'}></input>
+    <input onChange={(e)=>{setAge(e.target.value)}} type={'number'} placeholder ={'Age'}></input>
 
     <input onChange={(e)=>{setCountry(e.target.value)}} type={'text'} placeholder ={'Country'}></input>
 
