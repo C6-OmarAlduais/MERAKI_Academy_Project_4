@@ -52,11 +52,26 @@ const getAllProducts = (req, res) => {
       });
     });
 };
+
+  //--------------------------------------- regex
+  const search = (req, res) => {
+    const regex = new RegExp(req.body,'gi')
+    productModel.find({productName:{$regex:regex}})
+    .then((res)=>{
+res.
+    })
+    .catch((err)=>{
+
+    })
+}
+
 //---------------------------------- get product by Id
 const getProductById = (req, res) => {
   let _id = req.query.id;
   productModel
     .find({ _id })
+    .populate('comments')
+    .exec()
     .then((product) => {
       if (!product) {
         res.status(404).json({

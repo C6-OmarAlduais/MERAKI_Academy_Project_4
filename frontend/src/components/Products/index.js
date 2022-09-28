@@ -21,16 +21,7 @@ const Products = () => {
 
   const { token } = useContext(appContext);
 
-  /*const createNewProduct = () => {
-    axios.post('http://localhost:5000/products/', {img, productName, description, price, ItemsCounter})
-    .then((res)=>{
-        console.log(res);
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
-}*/
-
+  
   //------------------------------------ get all products
 
   const getAllProducts = () => {
@@ -48,38 +39,9 @@ const Products = () => {
   };
 
   const navigate = useNavigate()
-  //--------------------------------------- get product by id
-//   const getProductById = (_id) => {
-//     axios.get(`http://localhost:5000/products/search_1?id=${_id}`)
-//     .then((res)=>{
-//         console.log(res.data.product[0]);
-// setProductById(res.data.product[0])
-//         navigate('/product')
 
-//     })
-//     .catch((err)=>{
-//         console.log(err);
 
-//     })
-//   }
-
-  //---------------------------------------update product by id
-  /*
-  const updateProductById = () => {
-    axios
-      .put(`http://localhost:5000/products/${id}`, {
-        productName: newProductName,
-        description: newDescription,
-        price: newPrice,
-      })
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  */
+ 
   useEffect(() => {
     getAllProducts();
   }, []);
