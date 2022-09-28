@@ -1,10 +1,10 @@
 import { React, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { appContext } from "../../App";
+import { appContext } from "../../../App";
 //-------------------------------
 
-const Admin = () => {
+const UpdateProduct = () => {
   //-------------------------------
   const { id } = useParams();
   const {token} = useContext(appContext)
@@ -16,18 +16,6 @@ const Admin = () => {
   const [newPrice, setNewPrice] = useState("");
   const [ItemsCounter, setItemsCounter] = useState(0);
   const [message, setMessage] = useState("");
-
-
-  //-------------------------------- create new Product
-  /*const createNewProduct = () => {
-    axios.post('http://localhost:5000/products/', {productName, description, price}, {headers:{Authorization:`Bearer ${token}`}})
-    .then((res)=>{
-        //console.log(res);
-    })
-    .catch((err)=>{
-       setMessage(err.response.data.message)
-    })
-}*/
 
   //---------------------------------------update product by id
 
@@ -42,7 +30,7 @@ const Admin = () => {
         console.log(res);
       })
       .catch((err) => {
-        console.log(err);
+        setMessage(err.response.data.message)
       });
   };
 
@@ -72,8 +60,9 @@ const Admin = () => {
         placeholder={"Update the product price"}
       ></input>
       <button onClick={updateProductById}>Update</button>
+      
     </div>
   );
 };
 
-export default Admin;
+export default UpdateProduct;

@@ -6,7 +6,8 @@ import { createContext, useState } from "react";
 import Login from "./components/Login";
 import Products from "./components/Products";
 import ProductById from "./components/ProductById";
-import Admin from "./components/Admins";
+import UpdateProduct from "./components/Admins/UpdateProduct";
+import CreateProduct from "./components/Admins/Create";
 //--------------------------------------------
 export const appContext = createContext()
 
@@ -26,7 +27,8 @@ function App() {
       <Route path="/login" element={<Login/>}/>
       <Route path="/home" element={<Products/>}/>
       <Route path="/product/:id" element={<ProductById/>}/>
-      <Route path="/update/:id" element={<Admin/>}/>
+      <Route path="/update/:id" element={<UpdateProduct/>}/>
+      <Route path="/create" element={<CreateProduct/>}/>
       </Routes>
     </div>
     </appContext.Provider>

@@ -17,6 +17,8 @@ const {id} = useParams()
 
 const [product, setProduct] = useState({});
 const [comment, setComment] = useState('');
+const [message, setMessage] = useState("");
+
 
 //--------------------------------
 
@@ -44,19 +46,34 @@ const {token} = useContext(appContext)
             console.log(err.response); 
         }
       }
+
+      const deleteProductById = () => {
+        axios.delete(`http://localhost:5000/products/${id}`, {headers:{Authorization:`Bearer ${token}`}})
+        .then((res)=>{
+            console.log(res.data);
+
+        })
+        .catch((err)=>{
+            setMessage(err.response.data.message)
+        })
+      }
       useEffect(() => {
        getProductById()
       }, []);
 
     return (
         <div >
-            <h3 onClick={()=>navigate(`/update/${id}`)}>{product.productName}</h3>
-            <p onClick={()=>navigate(`/update/${id}`)}>{product.description}</p>
-            <p onClick={()=>navigate(`/update/${id}`)}>{product.price}</p>
+            <h3>{product.productName}</h3>
+            <p>{product.description}</p>
+            <p>{product.price}</p>
             <p>{product.comments && product.comments.comment}</p>
          
             <input onChange={(e)=>{setComment(e.target.value)}} type={'text'} placeholder={'Write Your Comment...'}></input>
             <button onClick={addComment}>Add Comment</button>
+            
+            <button onClick={()=>navigate(`/update/${id}`)}>Update</button>
+            <button onClick={deleteProductById}>Delete</button>
+            <button onClick={()=>navigate(`/create`)}>Create</button>
         </div>
     );
 }
