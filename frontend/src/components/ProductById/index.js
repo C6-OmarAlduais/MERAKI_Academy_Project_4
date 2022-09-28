@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { appContext } from '../../App';
@@ -9,7 +9,7 @@ import { appContext } from '../../App';
 const ProductById = () => {
 
 //--------------------------------
-
+const navigate = useNavigate()
 const {id} = useParams()
 //console.log(id);
 
@@ -49,10 +49,10 @@ const {token} = useContext(appContext)
       }, []);
 
     return (
-        <div>
-            <h3>{product.productName}</h3>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
+        <div >
+            <h3 onClick={()=>navigate(`/update/${id}`)}>{product.productName}</h3>
+            <p onClick={()=>navigate(`/update/${id}`)}>{product.description}</p>
+            <p onClick={()=>navigate(`/update/${id}`)}>{product.price}</p>
             <p>{product.comments && product.comments.comment}</p>
          
             <input onChange={(e)=>{setComment(e.target.value)}} type={'text'} placeholder={'Write Your Comment...'}></input>

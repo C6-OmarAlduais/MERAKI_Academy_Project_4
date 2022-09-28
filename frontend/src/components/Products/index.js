@@ -9,13 +9,8 @@ import { useNavigate } from "react-router-dom";
 //---------------------------
 
 const Products = () => {
-  const [img, setImg] = useState("");
-  const [newProductName, setNewProductName] = useState("");
-  const [newDescription, setNewDescription] = useState("");
-  const [newPrice, setNewPrice] = useState("");
-  const [ItemsCounter, setItemsCounter] = useState(0);
+  
   const [allProducts, setAllProducts] = useState([]);
-  const [productById, setProductById] = useState({});
 
   //-----------------------------
 
@@ -55,7 +50,6 @@ const Products = () => {
             <h3>{product.productName}</h3>
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <>{productById.productName}</>
           </div>
         );
       })}

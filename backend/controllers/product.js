@@ -55,13 +55,22 @@ const getAllProducts = (req, res) => {
 
   //--------------------------------------- regex
   const search = (req, res) => {
-    const regex = new RegExp(req.body,'gi')
+    const regex = new RegExp(req.query.productName,'gi')
+    console.log(regex);
     productModel.find({productName:{$regex:regex}})
-    .then((res)=>{
-res.
+    .then((result)=>{
+res.status(200).json({
+    success:true,
+    message:`This is the product`,
+    result
+})
     })
     .catch((err)=>{
-
+res.status(500).json({
+    success:false,
+    message:`Server error`,
+    err:err.message
+})
     })
 }
 
@@ -146,4 +155,5 @@ module.exports = {
   getProductById,
   updateProductById,
   deleteProductById,
+  search,
 };
