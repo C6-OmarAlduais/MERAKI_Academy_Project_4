@@ -16,9 +16,10 @@ export const appContext = createContext()
 function App() {
   const [isLogedIn, setIsLogedIn] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('token') || '');
+  const [allProducts, setAllProducts] = useState([]);
 //--------------------------------------------
   return (
-<appContext.Provider value = {{isLogedIn, setIsLogedIn, token, setToken}}>
+<appContext.Provider value = {{isLogedIn, setIsLogedIn, token, setToken, allProducts, setAllProducts}}>
     <div className="App">
       <h1>Hello world</h1>
       <Navbar/>

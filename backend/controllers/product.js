@@ -103,10 +103,23 @@ const getProductById = (req, res) => {
 };
 //------------------------------------------udpate product by id
 const updateProductById = (req, res) => {
-  const _id = req.params._id;
+  const _id = req.params.id;
+//   console.log(_id);
+  const filter = req.body;
+ // console.log(Object.keys(filter));
+  Object.keys(filter).forEach((key) => {
+    filter[key] == "" && delete filter[key];
+  });
   productModel
-    .findOneAndUpdate(_id, req.body, { new: true })
+    .findOneAndUpdate({_id}, req.body, { new: true })
     .then((product) => {
+        if(!product){
+            res.status(404).json({
+                success:false, 
+                message:`The product: ${_id} isn't found`,
+            })
+        }
+       // console.log('product:', product)
       res.status(201).json({
         success: true,
         message: `Product updated`,

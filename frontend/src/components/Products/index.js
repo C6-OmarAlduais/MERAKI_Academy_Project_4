@@ -10,11 +10,11 @@ import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   
-  const [allProducts, setAllProducts] = useState([]);
+//   const [allProducts, setAllProducts] = useState([]);
 
   //-----------------------------
 
-  const { token } = useContext(appContext);
+  const { token, setAllProducts, allProducts } = useContext(appContext);
 
   
   //------------------------------------ get all products
@@ -38,7 +38,7 @@ const Products = () => {
 
  
   useEffect(() => {
-    getAllProducts();
+    if(!allProducts.length)getAllProducts();
   }, []);
   return (
     

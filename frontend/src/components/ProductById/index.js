@@ -22,23 +22,23 @@ const [message, setMessage] = useState("");
 
 //--------------------------------
 
-const {token} = useContext(appContext)
+const {token, allProducts, setAllProducts} = useContext(appContext)
 
 //--------------------------------
 
-    const getProductById = () => {
-        axios.get(`http://localhost:5000/products/search_1?id=${id}`)
-        .then((res)=>{
-      //      console.log(res.data.product[0]);
-           setProduct(res.data.product[0])
-    
-        })
-        .catch((err)=>{
-            console.log(err);
-    
-        })
-      }
-      const addComment = async () => {
+const getProductById = () => {
+    axios.get(`http://localhost:5000/products/search_1?id=${id}`)
+    .then((res)=>{
+             console.log(res);
+        setProduct(res.data.product[0])
+        
+    })
+    .catch((err)=>{
+        console.log(err);
+        
+    })
+}
+const addComment = async () => {
         
         try {
             await axios.post(`http://localhost:5000/products/${id}/comments`, {comment,}, {headers:{Authorization: `Bearer ${token}`}})
@@ -50,7 +50,15 @@ const {token} = useContext(appContext)
       const deleteProductById = () => {
         axios.delete(`http://localhost:5000/products/${id}`, {headers:{Authorization:`Bearer ${token}`}})
         .then((res)=>{
-            console.log(res.data);
+            // console.log(res);
+            const deletedProduct = allProducts.filter((product)=>{
+                return product._id !== id
+            })
+            setAllProducts(deletedProduct)
+
+            navigate('/home')
+
+
 
         })
         .catch((err)=>{
