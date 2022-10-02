@@ -30,7 +30,11 @@ const UpdateProduct = () => {
         price: newPrice,
       }, {headers:{Authorization: `Bearer ${token}`}})
       .then((res) => {
-      
+        const updatedProduct = allProducts.filter((product)=>{
+          return product._id === product.id
+      })
+      setAllProducts(updatedProduct)
+      navigate('/home')
       })
       .catch((err) => {
         setMessage(err.response.data.message)
