@@ -1,13 +1,16 @@
 import { React, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { appContext } from "../../../App";
+
+
 //-------------------------------
 
 const UpdateProduct = () => {
   //-------------------------------
+  const navigate = useNavigate()
   const { id } = useParams();
-  const {token} = useContext(appContext)
+  const {token, allProducts, setAllProducts} = useContext(appContext)
   //-------------------------------
 
   const [img, setImg] = useState("");
@@ -27,7 +30,7 @@ const UpdateProduct = () => {
         price: newPrice,
       }, {headers:{Authorization: `Bearer ${token}`}})
       .then((res) => {
-        console.log(res);
+      
       })
       .catch((err) => {
         setMessage(err.response.data.message)

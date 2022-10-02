@@ -1,10 +1,13 @@
 import {React, useContext, useState} from 'react';
 import axios from 'axios';
 import { appContext } from '../../../App';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const CreateProduct = () => {
-    
-    const{token}= useContext(appContext)
+    const navigate = useNavigate()
+    const{token, allProducts, setAllProducts}= useContext(appContext)
     //---------------------------------
 
   const [message, setMessage] = useState("");
@@ -17,7 +20,7 @@ const CreateProduct = () => {
   const createNewProduct = () => {
     axios.post('http://localhost:5000/products/', {productName, description, price}, {headers:{Authorization:`Bearer ${token}`}})
     .then((res)=>{
-        //console.log(res);
+    
     })
     .catch((err)=>{
        setMessage(err.response.data.message)

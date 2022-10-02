@@ -1,0 +1,33 @@
+.reg {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    border: solid;
+    color: #40367C;
+    width: 300px;
+    padding: 5px;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: left;
+}
+.personal-info {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-block-color: #40367C;
+    font-size: 20px;
+
+}
+.button {
+    background: #40367C;
+    color: white;
+    font-size: unset;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: inherit;
+}
+.message{
+    color: #40367C;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}

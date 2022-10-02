@@ -1,0 +1,13 @@
+.search {
+    background-color: #2A2F57;
+    padding: 5px;
+}
+.search-input{
+    border-radius: 4px;
+    font-size: unset;
+    color: #40367C;
+    padding: 5px;
+    font-size: .99em;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    font-weight: bolder;
+}

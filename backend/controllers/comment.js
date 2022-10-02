@@ -12,7 +12,8 @@ const createNewComment = (req, res) => {
     commentInstance.save()
     .then((comment)=>{
         productModel.updateOne({_id:productId}, {$push:{comments:comment._id}})
-        .then(()=>{
+        .then((comment)=>{
+            console.log(comment);
         res.status(201).json({
             success: true,
             message: `Commet added`,

@@ -1,6 +1,8 @@
 import { useState, useContext, React } from "react";
 import axios from "axios";
 import { appContext } from "../../App";
+import "./style.css";
+
 //-------------------------------
 
 const Login = () => {
@@ -32,16 +34,16 @@ const Login = () => {
     //------------------------------
   };
   return (
-    <div>
-      Login
-      <input
+    <div className="reg">
+      Login:
+      <input className="personal-info"
         onChange={(e) => {
           setEmail(e.target.value);
         }}
         type={"text"}
         placeholder={"Your Email"}
       ></input>
-      <input
+      <input className="personal-info"
         onChange={(e) => {
           setPassword(e.target.value);
         }}
@@ -50,8 +52,8 @@ const Login = () => {
       >
       
       </input>
-      <button onClick={toLogin}>Login</button>
-      <p>{message}</p>
+      <button className="button" onClick={toLogin}>Login</button>
+      <p className="message" >{message}</p>
     </div>
   );
 };

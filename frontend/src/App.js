@@ -21,7 +21,7 @@ function App() {
   return (
 <appContext.Provider value = {{isLogedIn, setIsLogedIn, token, setToken, allProducts, setAllProducts}}>
     <div className="App">
-      <h1>Hello world</h1>
+      {/* <h1>Hello world</h1> */}
       <Navbar/>
       <Routes>
       <Route path="/register" element={<Register/>}/>

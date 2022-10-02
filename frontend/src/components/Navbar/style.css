@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #40367C;
+    /* border-radius: 6.4px; */
+    padding: 5px;
+}
+.bar-link {
+    color: white;
+    margin: 20px;
+    text-decoration: wavy;
+    border: outset;
+    padding: 5px;
+}
+.nav-items{
+    align-self: center;
+}
+.img-header{
+    margin-right: auto;
+}

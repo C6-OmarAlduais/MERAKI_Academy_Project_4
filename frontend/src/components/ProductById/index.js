@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { appContext } from '../../App';
+import "./style.css";
+
 
 //--------------------------------
 
