@@ -20,7 +20,11 @@ const CreateProduct = () => {
   const createNewProduct = () => {
     axios.post('http://localhost:5000/products/', {productName, description, price}, {headers:{Authorization:`Bearer ${token}`}})
     .then((res)=>{
-    
+        const updatedProduct = allProducts.filter((product)=>{
+            return product._id === product.id
+        })
+        setAllProducts(updatedProduct)
+        navigate('/home')
     })
     .catch((err)=>{
        setMessage(err.response.data.message)
