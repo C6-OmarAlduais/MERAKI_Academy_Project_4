@@ -47,9 +47,9 @@ const Products = () => {
     }
 }
 const addToCart = (value, id) => {
-    console.log(value, id);
     const idAndValue = {productId: id, productQnt: value}
-    localStorage.setItem('idAndValue', )
+    localStorage.setItem('idAndValue', JSON.stringify(idAndValue))
+    
 }
 
   return (

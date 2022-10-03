@@ -8,6 +8,7 @@ import Products from "./components/Products";
 import ProductById from "./components/ProductById";
 import UpdateProduct from "./components/Admins/UpdateProduct";
 import CreateProduct from "./components/Admins/Create";
+import Cart from "./components/Cart";
 //--------------------------------------------
 export const appContext = createContext()
 
@@ -31,6 +32,7 @@ function App() {
       <Route path="/product/:id" element={<ProductById/>}/>
       <Route path="/update/:id" element={<UpdateProduct/>}/>
       <Route path="/create" element={<CreateProduct/>}/>
+      <Route path="/cart" element={<Cart/>}/>
       </Routes>
     </div>
     </appContext.Provider>
