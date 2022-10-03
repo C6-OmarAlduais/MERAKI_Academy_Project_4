@@ -1,11 +1,13 @@
 const productModel = require("../models/productSchema");
 //----------------------------------- add new product
 const addNewProduct = (req, res) => {
-  const { productName, description, price, comments, category } = req.body;
+  const { productName, brand, image, description, price, comments, category } = req.body;
   const userId = req.token.userId;
 
   const productInstance = new productModel({
     productName,
+    brand,
+    image,
     description,
     price,
     comments,

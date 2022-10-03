@@ -2,7 +2,8 @@ import {React, useContext, useState} from 'react';
 import axios from 'axios';
 import { appContext } from '../../../App';
 import { useNavigate } from 'react-router-dom';
-
+import './style.css'
+//---------------------------------
 
 
 const CreateProduct = () => {

@@ -1,16 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import "./style.css";
+import { appContext } from "../../App";
 
 //-----------------------------
 
 const Navbar = () => {
+    const navigate = useNavigate()
+    const {setIsLogedIn, isLogedIn, setToken, token} = useContext(appContext)
+    
+    const toLogout =()=>{
+        setIsLogedIn(false)
+        setToken('')
+        localStorage.clear()
+        navigate('/login')
+      }
     return (
-        <div className="nav">
+        <div className="nav"> {token === ''? (<Link className="bar-link" to={'/login'}>Login</Link>):(<Link onClick={toLogout} className="bar-link" to={'/login'}>Sing out</Link>)}
         <div className="nav-items">
             <Link className="bar-link" to={'/home'}>Home</Link>
-            <Link className="bar-link" to={'/login'}>Login</Link>
-            <Link className="bar-link" to={'/register'}>Register</Link>
+            {/* <Link className="bar-link" to={'/login'}>Login</Link> */}
+            {/* <Link onClick={toLogout} className="bar-link" to={'/login'}>Sing out</Link> */}
         </div>
         <div className="img-header">
             <svg  xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" className="bi bi-laptop-fill" viewBox="0 0 16 16">

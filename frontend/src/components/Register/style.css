@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     margin-top: 50px;
+    width: 300px;
     border: solid;
     color: #40367C;
-    width: 300px;
     padding: 5px;
     font-weight: bolder;
     font-size: 20px;
@@ -24,6 +24,7 @@
     font-weight: 700;
     border-radius: 4px;
     padding: inherit;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 }
 .message{
     color: #40367C;

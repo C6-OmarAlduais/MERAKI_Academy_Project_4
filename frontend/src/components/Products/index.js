@@ -11,6 +11,7 @@ import "./style.css";
 
 const Products = () => {
     const [search, setSearch] = useState('');
+  
 
   //-----------------------------
 
@@ -34,15 +35,6 @@ const Products = () => {
 
   const navigate = useNavigate();
 
-//   const search1 = () => {
-//     axios.get(`http://localhost:5000/products/search_2?name=${productName}`)
-// .then((res)=>{
-// setSearch(res.data.productName)
-// })
-// .catch((err)=>{
-
-// })
-//   }
 
   useEffect(() => {
     if (!allProducts.length) getAllProducts();
@@ -50,9 +42,12 @@ const Products = () => {
   return (
     <div>
       <div>
+      <div className="search1">
         <div className="search">
         <input className="search-input"  onChange={(e)=>{setSearch(e.target.value)}} type={'text'} placeholder={'Search...'}></input>
         </div>
+        </div>
+        <div className="content">
         {allProducts.filter((val)=>{
             if(search===''){
                 return val
@@ -61,15 +56,19 @@ const Products = () => {
             }
         }).map((product, i) => {
           return (
-            <div onClick={() => navigate(`/product/${product._id}`)} key={i}>
-              {}
+            <div className="item" onClick={() => navigate(`/product/${product._id}`)} key={i}>
+              <h2>{product.brand}</h2>
               <h3>{product.productName}</h3>
+              <img className="product-img" src={product.image} alt={product.productName}></img>
+              <div className="price-desc">
               <p>{product.description}</p>
               <p>{product.price}</p>
+              </div>
             </div>
           );
         })}
         {/* <button onClick={()=>updateProductById(products.id)}>Update</button> */}
+        </div>
       </div>
     </div>
   );

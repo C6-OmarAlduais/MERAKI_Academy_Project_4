@@ -2,6 +2,7 @@ import { React, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { appContext } from "../../../App";
+import './style.css'
 
 
 //-------------------------------
@@ -14,9 +15,11 @@ const UpdateProduct = () => {
   //-------------------------------
 
   const [img, setImg] = useState("");
+  const [brand, setBrand] = useState('');
   const [newProductName, setNewProductName] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newPrice, setNewPrice] = useState("");
+  const [category, setCategory] = useState('');
   const [ItemsCounter, setItemsCounter] = useState(0);
   const [message, setMessage] = useState("");
 
@@ -42,17 +45,31 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div>
-      <input
-        onChange={(e) => {
+    <div className="update">
+      <input 
+        className={'input-update'} onChange={(e) => {
+          setBrand(e.target.value);
+        }}
+        type={"text"}
+        placeholder={"Update the product brand"}
+      ></input>
+      <input 
+        className={'input-update'} onChange={(e) => {
           setNewProductName(e.target.value);
         }}
         type={"text"}
         placeholder={"Update the product name"}
       ></input>
+      <input 
+        className={'input-update'} onChange={(e) => {
+          setImg(e.target.value);
+        }}
+        type={"text"}
+        placeholder={"Update the image url"}
+      ></input>
 
       <textarea
-        onChange={(e) => {
+        className={'input-update'} onChange={(e) => {
           setNewDescription(e.target.value);
         }}
         type={"text"}
@@ -60,13 +77,21 @@ const UpdateProduct = () => {
       ></textarea>
 
       <input
-        onChange={(e) => {
+        className={'input-update'} onChange={(e) => {
           setNewPrice(e.target.value);
         }}
         type={"text"}
         placeholder={"Update the product price"}
       ></input>
-      <button onClick={updateProductById}>Update</button>
+      <input 
+        className={'input-update'} onChange={(e) => {
+          setCategory(e.target.value);
+        }}
+        type={"text"}
+        placeholder={"Update the product category"}
+      ></input>
+
+      <button className="button" onClick={updateProductById}>Update</button>
       
     </div>
   );

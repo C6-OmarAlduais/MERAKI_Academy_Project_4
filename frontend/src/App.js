@@ -17,6 +17,7 @@ function App() {
   const [isLogedIn, setIsLogedIn] = useState(false);
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [allProducts, setAllProducts] = useState([]);
+  
 //--------------------------------------------
   return (
 <appContext.Provider value = {{isLogedIn, setIsLogedIn, token, setToken, allProducts, setAllProducts}}>

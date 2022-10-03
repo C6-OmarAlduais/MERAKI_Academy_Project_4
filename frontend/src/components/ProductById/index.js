@@ -40,13 +40,15 @@ const getProductById = () => {
         
     })
 }
-const addComment = async () => {
+const addComment = () => {
         
-        try {
-            await axios.post(`http://localhost:5000/products/${id}/comments`, {comment,}, {headers:{Authorization: `Bearer ${token}`}})
-        } catch (err) {
+        axios.post(`http://localhost:5000/products/${id}/comments`, {comment,}, {headers:{Authorization: `Bearer ${token}`}})
+        .then((res)=>{
+            console.log(product);
+        })
+        .catch ((err)=>{
             console.log(err.response); 
-        }
+        }) 
       }
 
       const deleteProductById = () => {
@@ -72,18 +74,24 @@ const addComment = async () => {
       }, []);
 
     return (
-        <div >
+        <div className='main'>
+        <div className="item-by-id">
+            <h2>{product.brand}</h2>
             <h3>{product.productName}</h3>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
+            <img className="product-img" src={product.image} alt={product.productName}></img>
+            <div className="price-desc">
+              <p>{product.description}</p>
+              <p>{product.price}</p>
+              </div>
+              </div>
             <p>{product.comments && product.comments.comment}</p>
          
-            <input onChange={(e)=>{setComment(e.target.value)}} type={'text'} placeholder={'Write Your Comment...'}></input>
-            <button onClick={addComment}>Add Comment</button>
+            <input className='input-comment' onChange={(e)=>{setComment(e.target.value)}} type={'text'} placeholder={'Write Your Comment...'}></input>
+            <button className='button' onClick={addComment}>Add Comment</button>
             
-            <button onClick={()=>navigate(`/update/${id}`)}>Update</button>
-            <button onClick={deleteProductById}>Delete</button>
-            <button onClick={()=>navigate(`/create`)}>Create</button>
+            <button className='button' onClick={()=>navigate(`/update/${id}`)}>Update</button>
+            <button className='button' onClick={deleteProductById}>Delete</button>
+            <button className='button' onClick={()=>navigate(`/create`)}>Create</button>
         </div>
     );
 }

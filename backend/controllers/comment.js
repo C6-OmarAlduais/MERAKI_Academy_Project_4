@@ -12,21 +12,21 @@ const createNewComment = (req, res) => {
     commentInstance.save()
     .then((comment)=>{
         productModel.updateOne({_id:productId}, {$push:{comments:comment._id}})
-        .then((comment)=>{
+        .then(()=>{
             console.log(comment);
         res.status(201).json({
             success: true,
             message: `Commet added`,
             comment,
-        })
-        .catch((err)=>{
+        }) })
+        .catch((err) => {
             res.status(500).json({
-                success:false,
-                message: `Server error`,
-                err: err.message,
-            })
+              success: false,
+              message: `Server Error`,
+              err: err.message,
+            });
         })
-        })
+       
     })
     .catch((err)=>{
         res.status(500).json({

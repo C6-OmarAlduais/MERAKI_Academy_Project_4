@@ -1,0 +1,57 @@
+.main{
+    padding: 50px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.item-by-id{
+    border: solid;
+    border-color: #40367C;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 500px;
+    width: 300px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+   
+}
+.product-img{
+    width: -webkit-fill-available;
+}
+h2{
+    background-color: #40367C;
+    color: white;
+    padding: 3px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+h3{
+    background-color: #2A2F57;
+    color: white;
+    padding: 5px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+
+}
+.price-desc{
+    color: #40367C;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 2px;
+    border-top: double;
+    border-color: #40367C;
+}
+.button {
+    background: #2A2F57;
+    color: white;
+    font-size: unset;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 5px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.input-comment{
+    border-radius: 4px;
+    font-size: unset;
+    color: #40367C;
+    padding: 8px;
+    font-size: .99em;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    font-weight: bolder;
+}
