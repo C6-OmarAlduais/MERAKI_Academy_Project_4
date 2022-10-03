@@ -39,6 +39,7 @@ userModel
           success: true,
           message: `Valid login credentials`,
           token: token,
+          role:user.role
         });
       } catch (error) {
         throw new Error(error.message);

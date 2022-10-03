@@ -30,6 +30,8 @@ const Login = () => {
         setIsLogedIn(true);
         setToken(res.data.token)
         localStorage.setItem('token', res.data.token)
+        localStorage.setItem('role', res.data.role.role)
+        navigate('/home')
       })
       .catch((err) => {
         console.log(err);

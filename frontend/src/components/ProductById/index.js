@@ -44,7 +44,13 @@ const addComment = () => {
         
         axios.post(`http://localhost:5000/products/${id}/comments`, {comment,}, {headers:{Authorization: `Bearer ${token}`}})
         .then((res)=>{
-            console.log(product);
+            console.log(allProducts);
+
+            const updatedProduct = allProducts.filter((product)=>{
+                return product._id === product.id
+            })
+            setAllProducts(updatedProduct)
+            navigate(`/product/${id}`)
         })
         .catch ((err)=>{
             console.log(err.response); 
@@ -59,19 +65,19 @@ const addComment = () => {
                 return product._id !== id
             })
             setAllProducts(deletedProduct)
-
             navigate('/home')
-
-
-
         })
         .catch((err)=>{
             setMessage(err.response.data.message)
         })
       }
+
+      //--------------------------------add to cart
+     
       useEffect(() => {
        getProductById()
       }, []);
+
 
     return (
         <div className='main'>
@@ -85,13 +91,18 @@ const addComment = () => {
               </div>
               </div>
             <p>{product.comments && product.comments.comment}</p>
-         
+            <div className='all-buttons'>
+         <div className='comments'>
             <input className='input-comment' onChange={(e)=>{setComment(e.target.value)}} type={'text'} placeholder={'Write Your Comment...'}></input>
-            <button className='button' onClick={addComment}>Add Comment</button>
-            
-            <button className='button' onClick={()=>navigate(`/update/${id}`)}>Update</button>
-            <button className='button' onClick={deleteProductById}>Delete</button>
-            <button className='button' onClick={()=>navigate(`/create`)}>Create</button>
+            <button className='button-by-id' onClick={addComment}>Add Comment</button>
+            </div>
+            <div className='update-create-delete'>
+            <button className='button-by-id' onClick={()=>navigate(`/update/${id}`)}>Update</button>
+            <button className='button-by-id' onClick={deleteProductById}>Delete</button>
+            <button className='button-by-id' onClick={()=>navigate(`/create`)}>Create</button>
+
+            </div>
+            </div>
         </div>
     );
 }

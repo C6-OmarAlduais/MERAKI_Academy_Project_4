@@ -39,6 +39,19 @@ const Products = () => {
   useEffect(() => {
     if (!allProducts.length) getAllProducts();
   }, []);
+
+  const role = localStorage.getItem('role')
+  const handleClick = (productId) => {
+    if(role === 'admin'){
+     navigate(`/product/${productId}`)
+    }
+}
+const addToCart = (value, id) => {
+    console.log(value, id);
+    const idAndValue = {productId: id, productQnt: value}
+    localStorage.setItem('idAndValue', )
+}
+
   return (
     <div>
       <div>
@@ -56,7 +69,7 @@ const Products = () => {
             }
         }).map((product, i) => {
           return (
-            <div className="item" onClick={() => navigate(`/product/${product._id}`)} key={i}>
+            <div className="item" onClick={() => handleClick(product._id)} key={i}>
               <h2>{product.brand}</h2>
               <h3>{product.productName}</h3>
               <img className="product-img" src={product.image} alt={product.productName}></img>
@@ -64,6 +77,7 @@ const Products = () => {
               <p>{product.description}</p>
               <p>{product.price}</p>
               </div>
+              <input type='number' min='0' onChange={(e)=> addToCart(e.target.value, product._id)} ></input>
             </div>
           );
         })}

@@ -1,0 +1,27 @@
+
+.create{
+    display: flex;
+    flex-direction: column;
+    margin: 100px;
+    border: solid;
+    color: #40367C;
+    padding: 5px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.input-create{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-block-color: #40367C;
+    font-size: 20px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.button {
+    background: #40367C;
+    color: white;
+    font-size: unset;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: inherit;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}

@@ -15,11 +15,11 @@ const UpdateProduct = () => {
   //-------------------------------
 
   const [img, setImg] = useState("");
-  const [brand, setBrand] = useState('');
+  const [newBrand, setNewBrand] = useState('');
   const [newProductName, setNewProductName] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [newPrice, setNewPrice] = useState("");
-  const [category, setCategory] = useState('');
+  const [newCategory, setNewCategory] = useState('');
   const [ItemsCounter, setItemsCounter] = useState(0);
   const [message, setMessage] = useState("");
 
@@ -28,9 +28,12 @@ const UpdateProduct = () => {
   const updateProductById = () => {
     axios
       .put(`http://localhost:5000/products/${id}`, {
+        brand: newBrand,
         productName: newProductName,
+        image:img,
         description: newDescription,
         price: newPrice,
+        category:newCategory
       }, {headers:{Authorization: `Bearer ${token}`}})
       .then((res) => {
         const updatedProduct = allProducts.filter((product)=>{
@@ -48,7 +51,7 @@ const UpdateProduct = () => {
     <div className="update">
       <input 
         className={'input-update'} onChange={(e) => {
-          setBrand(e.target.value);
+          setNewBrand(e.target.value);
         }}
         type={"text"}
         placeholder={"Update the product brand"}
@@ -85,7 +88,7 @@ const UpdateProduct = () => {
       ></input>
       <input 
         className={'input-update'} onChange={(e) => {
-          setCategory(e.target.value);
+          setNewCategory(e.target.value);
         }}
         type={"text"}
         placeholder={"Update the product category"}

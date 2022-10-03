@@ -7,10 +7,9 @@
     border-color: #40367C;
     margin-top: 10px;
     margin-bottom: 20px;
-    height: 500px;
-    width: 300px;
+    height: 350px;
+    width: 170px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
-   
 }
 .product-img{
     width: -webkit-fill-available;
@@ -36,7 +35,7 @@ h3{
     border-top: double;
     border-color: #40367C;
 }
-.button {
+.button-by-id {
     background: #2A2F57;
     color: white;
     font-size: unset;
@@ -54,4 +53,8 @@ h3{
     font-size: .99em;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     font-weight: bolder;
+}
+.all-buttons{
+    display: flex;
+    flex-direction: column;
 }

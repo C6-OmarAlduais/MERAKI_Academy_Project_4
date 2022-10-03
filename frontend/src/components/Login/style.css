@@ -25,7 +25,8 @@
     border-radius: 4px;
     padding: inherit;
     text-align: center;
-    text-decoration: wavy
+    text-decoration: wavy;
+    margin: 10px
 }
 .message{
     color: #40367C;

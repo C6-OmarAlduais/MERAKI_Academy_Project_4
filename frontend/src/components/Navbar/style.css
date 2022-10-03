@@ -7,14 +7,20 @@
 }
 .bar-link {
     color: white;
-    margin: 20px;
+    margin: 5px;
     text-decoration: wavy;
     border: outset;
-    padding: 5px;
+    padding: 7px;
 }
 .nav-items{
     align-self: center;
 }
 .img-header{
     margin-right: auto;
+}
+.cart2{
+    color: white;
+    margin: 5px;
+    border: outset;
+    padding: 5px;
 }
