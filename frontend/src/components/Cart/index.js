@@ -1,34 +1,47 @@
-import { React, useContext } from "react";
+import axios from "axios";
+import { React, useState, useContext } from "react";
 import { appContext } from "../../App";
+
 
 //--------------------------
 
 const Cart = () => {
-  //------------------------------ get id and qnt form the local sorage
-  const idAndValue = localStorage.getItem("idAndValue");
-  const id_value = JSON.parse(idAndValue);
-  //----------------------------------
-  const { allProducts } = useContext(appContext);
 
-  //---------------------------------
-  const addToCart = () => {
-    console.log(id_value);
-  };
+const {token} = useContext (appContext);
+
+    //--------------------------
+    
+    const [allItems, setAllItems] = useState([]);
+    //--------------------------
+ const getAllItems = () => {
+    console.log(token);
+    axios.get('http://localhost:5000/cart/', {
+        headers: { Authorization: `Bearer ${token}` },})
+    .then((res)=>{
+        console.log(res);
+        setAllItems(res.data.products)
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+ }
   return (
     <div>
-      {allProducts.filter((product, i) => {
-        console.log(product);
-        if (product._id !== id_value.id) {
-          return <p>No Items added to Cart</p>;
-        } else {
-          return (
-            <div>
-              <h2>{product._id}</h2>
-            </div>
-          );
-        }
-      })}
-      <button onClick={addToCart}>Cart</button>
+
+        {allItems?.map((item, i)=>{
+            console.log(item);
+            return(
+                <div key={i}>
+                <p>{item.qnt}</p>
+                <p>{item.productId.brand}</p>
+                <p>{item.productId.image}</p>
+                <p>{item.productId.price}</p>
+                <img src={item.productId.image}></img>
+                </div>
+
+            )
+        })}
+    <button onClick={getAllItems} >Click</button>
     </div>
   );
 };
