@@ -9,19 +9,19 @@ const addCart = async (req, res) => {
     console.log(found);
     let cart;
     if (found) {
-         cart = await cartModel.findOneAndUpdate(
-            { userId, productId },
-            { qnt },
-            { new: true }
-            );
-            console.log(cart);
+      cart = await cartModel.findOneAndUpdate(
+        { userId, productId },
+        { qnt },
+        { new: true }
+      );
+      console.log(cart);
     } else {
-        const cartInstance = new cartModel({
-            userId,
-            productId,
-            qnt,
-        });
-        cart = await cartInstance.save();
+      const cartInstance = new cartModel({
+        userId,
+        productId,
+        qnt,
+      });
+      cart = await cartInstance.save();
     }
 
     res.status(201).json({
@@ -63,9 +63,12 @@ const getAllCartItems = (req, res) => {
 
 const deleteItemFromCart = (req, res) => {
   const productId = req.params.id;
+
+  console.log("productId:", productId);
   cartModel
     .findByIdAndDelete({ _id: productId })
     .then((product) => {
+      console.log("=================>", product);
       if (!product) {
         return res.status(404).json({
           success: false,

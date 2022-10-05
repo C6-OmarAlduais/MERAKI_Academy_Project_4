@@ -61,10 +61,10 @@ const addComment = () => {
         axios.delete(`http://localhost:5000/products/${id}`, {headers:{Authorization:`Bearer ${token}`}})
         .then((res)=>{
             // console.log(res);
-            const deletedProduct = allProducts.filter((product)=>{
+            const nondeletedProduct = allProducts.filter((product)=>{
                 return product._id !== id
             })
-            setAllProducts(deletedProduct)
+            setAllProducts(nondeletedProduct)
             navigate('/home')
         })
         .catch((err)=>{

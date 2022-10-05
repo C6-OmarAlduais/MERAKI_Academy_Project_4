@@ -32,8 +32,27 @@ const Cart = () => {
   }, []);
 
   const deleteCart = async (id) => {
-    const res = await axios.delete(`http://localhost:5000/cart/${id}`/* , {headers:{Authorization:`Bearer ${token}`}} */)
+    console.log(id);
+    try {
+        
+        await axios.delete(`http://localhost:5000/cart/${id}`, {headers:{Authorization:`Bearer ${token}`}})
+        const nonDeletedCart = allItems.filter((item)=>{
+            return item._id !== id
+        })
+        setAllItems(nonDeletedCart)
+
+    } catch (error) {
+        console.log(error);
+    }
   }
+const totalPrice = () => {
+    const total = allItems.reduce((acc, item)=>{
+    acc += item.qnt * item.productId.price
+        return acc
+      },0)
+      console.log('........................' ,total);
+      return total
+}
 
   return (
     <div className="main">
@@ -52,19 +71,16 @@ const Cart = () => {
               <p>{item.productId.description}</p>
               <p>Qty:{item.qnt}</p>
               <p>{item.productId.price}$</p>
-              <button onClick={()=>deleteCart(item.productId._id)}>Delete</button>
+              <button className="button-delete1" onClick={()=>deleteCart(item._id)}>Delete</button>
             </div>
           </div>
         );
       })}
-      {allItems?.reduce((total,item)=>{
-total = item.qnt*item.productId.price
-return(
+
     <div>
-        <h3 className="total">total {total}$</h3>
+        <h3 className="total">total {totalPrice()}$</h3>
     </div>
-)
-      },0)}
+
     </div>
   );
 };

@@ -7,7 +7,7 @@
     border-color: #40367C;
     margin-top: 10px;
     margin-bottom: 20px;
-    height: 320px;
+    height: 380px;
     width: 200px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 }
@@ -19,4 +19,18 @@
     border: outset;
     background-color: white;
     color: #2A2F57;
+}
+.button-delete1 {
+    background: #40367C;
+    color: white;
+    font-size: unset;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 6px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    border: outset;
+}
+.button-delete1:hover{
+    background: white;  
+    color: #40367C;
 }
