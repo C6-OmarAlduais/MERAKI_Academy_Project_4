@@ -32,7 +32,6 @@ const Products = () => {
     return currentQty;
   };
   
-//   console.log(' allProducts.length:',  allProducts.length)
 
   let page = 0 
   const nextPage = () => {
@@ -43,7 +42,6 @@ const Products = () => {
         
     } else{
         page = page + 1 
-        console.log(page);
         getAllProducts()
         return page
     }
@@ -53,17 +51,14 @@ const Products = () => {
   const prePage = () => {
     if(page <= 0){
         page = 0
-        console.log(page);
         getAllProducts()
         return page
     } else{
     page = page - 1
-    console.log(page);
     getAllProducts()
     return page
     }
   }
-  console.log(page);
 
   const getAllProducts = async () => {
     setLoading(true);

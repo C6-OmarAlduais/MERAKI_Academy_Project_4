@@ -29,7 +29,10 @@
     margin: 5px;
     border: outset;
     padding: 5px;
+    fill:white
 }
-.cart2:focus{
-    color: white
+.cart2:hover{
+    color: #2A2F57;
+    background-color: white;
+    fill:#2A2F57
 }
