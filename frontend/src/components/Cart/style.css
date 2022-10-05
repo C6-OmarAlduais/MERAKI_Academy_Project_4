@@ -1,0 +1,22 @@
+.main{
+    padding: 50px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.items{
+    border: solid;
+    border-color: #40367C;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 320px;
+    width: 200px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.product-img {
+    width:120px;
+}
+.total{
+    width: 194px;
+    border: outset;
+    background-color: white;
+    color: #2A2F57;
+}

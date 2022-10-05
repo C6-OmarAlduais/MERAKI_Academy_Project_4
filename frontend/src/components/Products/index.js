@@ -4,6 +4,7 @@ import { appContext } from "../../App";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Pagination from "../Pagination";
 
 //---------------------------
 
@@ -11,6 +12,10 @@ import "./style.css";
 
 const Products = () => {
   const [search, setSearch] = useState("");
+  //   const [myProducts, setMyProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productPerPage] = useState(3);
 
   //-----------------------------
 
@@ -18,26 +23,25 @@ const Products = () => {
 
   //------------------------------------ get all products
 
-  const getAllProducts = () => {
-    axios
-      .get("http://localhost:5000/products/", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((res) => {
-        // console.log(res);
-        setAllProducts(res.data.products);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const getAllProducts = async () => {
+    setLoading(true);
+    const res = await axios.get("http://localhost:5000/products/", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    setAllProducts(res.data.products);
+    setLoading(false);
   };
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!allProducts.length) getAllProducts();
-  }, []);
-
+  //console.log(allProducts);
+  const indexOfLastProduct = currentPage * productPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productPerPage;
+  const currentProducts = allProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
   const role = localStorage.getItem("role");
   const handleClick = (productId) => {
     if (role === "admin") {
@@ -45,17 +49,21 @@ const Products = () => {
     }
   };
 
-  const [products, setProducts] = useState({});
-
-  const handleProducts = (id, qnt) => {
-    setProducts({ ...products, [id]: qnt });
+  const paginate = (pageNums) => {
+    console.log(currentProducts);
+    setCurrentPage(pageNums);
   };
- 
+  useEffect(() => {
+    if (!allProducts.length) getAllProducts();
+  }, []);
+  const [products, setProducts] = useState(0);
+
   const addToCart = (id) => {
-       axios
+    console.log(products[id]);
+    axios
       .post(
         "http://localhost:5000/cart/",
-        { productId: id, qnt: products[id] },
+        { productId: id, qnt: products },
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((res) => {
@@ -65,34 +73,14 @@ const Products = () => {
         console.log(err);
       });
   };
-
   return (
     <div>
       <div>
-        <div className="search1">
-          <div className="search">
-            <input
-              className="search-input"
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-              type={"text"}
-              placeholder={"Search..."}
-            ></input>
-          </div>
-        </div>
         <div className="content">
-          {allProducts
-            .filter((val) => {
-              if (search === "") {
-                return val;
-              } else if (
-                val.productName.toLowerCase().includes(search.toLowerCase())
-              ) {
-                return val;
-              }
-            })
-            .map((product, i) => {
+          {loading ? (
+            <div>loading...</div>
+          ) : (
+            currentProducts.map((product, i) => {
               return (
                 <div
                   className="item"
@@ -108,22 +96,31 @@ const Products = () => {
                   ></img>
                   <div className="price-desc">
                     <p>{product.description}</p>
-                    <p>{product.price}</p>
+                    <p>{product.price}$</p>
                   </div>
                   <input
+                    className="count"
                     type="number"
                     min="0"
-                    onChange={(e) => handleProducts(e.target.value)}
+                    onChange={(e) => setProducts(e.target.value)}
                   ></input>
-                  <button onClick={() => addToCart(product._id)}>
+                  <button
+                    className="button-cart"
+                    onClick={() => addToCart(product._id)}
+                  >
                     Add to Cart
                   </button>
                 </div>
               );
-            })}
-          {/* <button onClick={()=>updateProductById(products.id)}>Update</button> */}
+            })
+          )}
         </div>
       </div>
+      <Pagination
+        productsPerPage={productPerPage}
+        totalProducts={allProducts.length}
+        paginate={paginate}
+      />
     </div>
   );
 };

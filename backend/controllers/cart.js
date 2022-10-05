@@ -4,21 +4,24 @@ const addCart = async (req, res) => {
   try {
     const { productId, qnt } = req.body;
     const userId = req.token.userId;
-    const found = await cartModel.find({ userId, productId });
+
+    const found = await cartModel.findOne({ userId, productId });
+    console.log(found);
     let cart;
     if (found) {
-      cart = await cartModel.findOneAndUpdate(
-        { userId, productId },
-        { qnt },
-        { new: true }
-      );
+         cart = await cartModel.findOneAndUpdate(
+            { userId, productId },
+            { qnt },
+            { new: true }
+            );
+            console.log(cart);
     } else {
-      const cartInstance = new cartModel({
-        userId,
-        productId,
-        qnt,
-      });
-      cart = await cartInstance.save();
+        const cartInstance = new cartModel({
+            userId,
+            productId,
+            qnt,
+        });
+        cart = await cartInstance.save();
     }
 
     res.status(201).json({

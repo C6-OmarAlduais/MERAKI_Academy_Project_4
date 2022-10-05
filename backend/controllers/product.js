@@ -34,9 +34,14 @@ const addNewProduct = (req, res) => {
 //--------------------------------- get all products
 const getAllProducts = (req, res) => {
   const userId = req.token.userId;
+//   const page = req.query.p || 0
+//   const productPerPage = 1
 
   productModel
     .find({})
+    // .skip(page * productPerPage)
+    // .limit(productPerPage)
+    // .exec()
     .then((products) => {
       console.log(products);
       res.status(200).json({

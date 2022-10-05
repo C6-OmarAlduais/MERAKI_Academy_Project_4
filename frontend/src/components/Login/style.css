@@ -26,7 +26,12 @@
     padding: inherit;
     text-align: center;
     text-decoration: wavy;
-    margin: 10px
+    margin: 10px;
+    border: outset;
+}
+.button:hover{
+    background: white;  
+    color: #40367C;
 }
 .message{
     color: #40367C;

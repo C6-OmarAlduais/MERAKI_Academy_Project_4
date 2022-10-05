@@ -4,6 +4,7 @@
     background-color: #40367C;
     /* border-radius: 6.4px; */
     padding: 5px;
+    padding-left: 15px;
 }
 .bar-link {
     color: white;
@@ -11,6 +12,10 @@
     text-decoration: wavy;
     border: outset;
     padding: 7px;
+}
+.bar-link:hover{
+    background: white;  
+    color: #40367C;
 }
 .nav-items{
     align-self: center;

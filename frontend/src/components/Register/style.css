@@ -23,8 +23,13 @@
     font-size: unset;
     font-weight: 700;
     border-radius: 4px;
+    border: outset;
     padding: inherit;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.button {
+    background: white;  
+    color: #40367C;
 }
 .message{
     color: #40367C;

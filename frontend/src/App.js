@@ -9,6 +9,7 @@ import ProductById from "./components/ProductById";
 import UpdateProduct from "./components/Admins/UpdateProduct";
 import CreateProduct from "./components/Admins/Create";
 import Cart from "./components/Cart";
+import Search from "./components/Search";
 //--------------------------------------------
 export const appContext = createContext()
 
@@ -25,6 +26,7 @@ function App() {
     <div className="App">
       {/* <h1>Hello world</h1> */}
       <Navbar/>
+      <Search/>
       <Routes>
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>

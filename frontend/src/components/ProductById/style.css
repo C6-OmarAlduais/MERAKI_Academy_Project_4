@@ -42,8 +42,13 @@ h3{
     font-weight: 700;
     border-radius: 3px;
     padding: 8px;
+    border: outset;
     margin: 5px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.button-by-id:hover{
+    background: white;  
+    color: #40367C;
 }
 .input-comment{
     border-radius: 4px;

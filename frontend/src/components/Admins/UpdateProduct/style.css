@@ -23,4 +23,11 @@
     border-radius: 4px;
     padding: inherit;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    border: outset;
 }
+.button:hover{
+    background: white;  
+    color: #40367C;
+}
+
+

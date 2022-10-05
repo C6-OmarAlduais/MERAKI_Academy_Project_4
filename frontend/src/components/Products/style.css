@@ -13,11 +13,15 @@
     font-size: .99em;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     font-weight: bolder;
+    margin-left: 9px;
 }
 .content{
     display: grid;
     grid-template-columns: repeat(3, 200px);
     justify-content:space-evenly ;
+    background-color: #DEE2FF
+   
+    ;
 }
 .item{
     border: solid;
@@ -28,6 +32,9 @@
 }
 .product-img{
     width: -webkit-fill-available;
+}
+.product-img:hover{
+    transform: scale(3);
 }
 h2{
     background-color: #40367C;
@@ -47,4 +54,29 @@ h3{
     padding: 2px;
     border-top: double;
     border-color: #40367C;
+}
+.count{
+    border-radius: 4px;
+    font-size: unset;
+    color: #40367C;
+    padding: 7px;
+    font-size: .99em;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    font-weight: bolder;
+    width: 40px;
+}
+.button-cart {
+    background: #2A2F57;
+    color: white;
+    font-size: unset;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 8px;
+    border: outset;
+    margin: 5px;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+.button-cart:hover{
+    background: white;  
+    color: #40367C;
 }

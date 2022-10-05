@@ -87,7 +87,7 @@ const addComment = () => {
             <img className="product-img" src={product.image} alt={product.productName}></img>
             <div className="price-desc">
               <p>{product.description}</p>
-              <p>{product.price}</p>
+              <p>{product.price}$</p>
               </div>
               </div>
             <p>{product.comments && product.comments.comment}</p>
