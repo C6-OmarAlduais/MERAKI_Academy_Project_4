@@ -64,11 +64,9 @@ const getAllCartItems = (req, res) => {
 const deleteItemFromCart = (req, res) => {
   const productId = req.params.id;
 
-  console.log("productId:", productId);
   cartModel
     .findByIdAndDelete({ _id: productId })
     .then((product) => {
-      console.log("=================>", product);
       if (!product) {
         return res.status(404).json({
           success: false,

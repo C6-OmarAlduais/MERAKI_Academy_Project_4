@@ -18,11 +18,10 @@
 
 }
 .button {
-    background: #40367C;
+    background: #2A2F57;
     color: white;
     font-size: unset;
     font-weight: 700;
-    border-radius: 4px;
     border: outset;
     padding: inherit;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;

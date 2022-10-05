@@ -21,8 +21,8 @@ h2{
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 }
 h3{
-    background-color: #2A2F57;
-    color: white;
+    background-color: #BDC4FF;
+    color: #2A2F57;
     padding: 5px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 
@@ -40,7 +40,6 @@ h3{
     color: white;
     font-size: unset;
     font-weight: 700;
-    border-radius: 3px;
     padding: 8px;
     border: outset;
     margin: 5px;
@@ -51,7 +50,6 @@ h3{
     color: #40367C;
 }
 .input-comment{
-    border-radius: 4px;
     font-size: unset;
     color: #40367C;
     padding: 8px;

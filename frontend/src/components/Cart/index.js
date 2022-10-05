@@ -6,11 +6,10 @@ import "./style.css";
 //--------------------------
 
 const Cart = () => {
-  const { token } = useContext(appContext);
+  const { token, setCartProducts, cartProducts } = useContext(appContext);
 
   //--------------------------
 
-  const [allItems, setAllItems] = useState([]);
   //--------------------------
   const getAllItems = () => {
     console.log(token);
@@ -20,7 +19,7 @@ const Cart = () => {
       })
       .then((res) => {
         console.log(res.data.products);
-        setAllItems(res.data.products);
+        setCartProducts(res.data.products);
       })
       .catch((err) => {
         console.log(err);
@@ -28,35 +27,33 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    getAllItems()
+    getAllItems();
   }, []);
 
   const deleteCart = async (id) => {
-    console.log(id);
     try {
-        
-        await axios.delete(`http://localhost:5000/cart/${id}`, {headers:{Authorization:`Bearer ${token}`}})
-        const nonDeletedCart = allItems.filter((item)=>{
-            return item._id !== id
-        })
-        setAllItems(nonDeletedCart)
-
+      await axios.delete(`http://localhost:5000/cart/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const nonDeletedCart = cartProducts.filter((item) => {
+        return item._id !== id;
+      });
+      setCartProducts(nonDeletedCart);
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-  }
-const totalPrice = () => {
-    const total = allItems.reduce((acc, item)=>{
-    acc += item.qnt * item.productId.price
-        return acc
-      },0)
-      console.log('........................' ,total);
-      return total
-}
+  };
+  const totalPrice = () => {
+    const total = cartProducts.reduce((acc, item) => {
+      acc += item.qnt * item.productId.price;
+      return acc;
+    }, 0);
+    return total;
+  };
 
   return (
     <div className="main">
-      {allItems?.map((item, i) => {
+      {cartProducts?.map((item, i) => {
         console.log(item);
         return (
           <div key={i} className="items">
@@ -71,16 +68,20 @@ const totalPrice = () => {
               <p>{item.productId.description}</p>
               <p>Qty:{item.qnt}</p>
               <p>{item.productId.price}$</p>
-              <button className="button-delete1" onClick={()=>deleteCart(item._id)}>Delete</button>
+              <button
+                className="button-delete1"
+                onClick={() => deleteCart(item._id)}
+              >
+                Delete
+              </button>
             </div>
           </div>
         );
       })}
 
-    <div>
+      <div>
         <h3 className="total">total {totalPrice()}$</h3>
-    </div>
-
+      </div>
     </div>
   );
 };

@@ -1,12 +1,11 @@
 .search {
-    background-color: #2A2F57;
+    background-color: #BDC4FF;
     padding: 5px;
 }
 .search1{
     text-align-last: left;
 }
 .search-input{
-    border-radius: 4px;
     font-size: unset;
     color: #40367C;
     padding: 5px;
@@ -34,7 +33,7 @@
     width: -webkit-fill-available;
 }
 .product-img:hover{
-    transform: scale(3);
+    transform: scale(2);
 }
 h2{
     background-color: #40367C;
@@ -42,12 +41,13 @@ h2{
     padding: 3px;
 }
 h3{
-    background-color: #2A2F57;
-    color: white;
+    background-color: #BDC4FF;
+    color: #2A2F57;
     padding: 5px;
 
 }
 .price-desc{
+    height: 20%;
     color: #40367C;
     font-size: 1em;
     font-weight: bolder;
@@ -56,7 +56,6 @@ h3{
     border-color: #40367C;
 }
 .count{
-    border-radius: 4px;
     font-size: unset;
     color: #40367C;
     padding: 7px;
@@ -70,13 +69,33 @@ h3{
     color: white;
     font-size: unset;
     font-weight: 700;
-    border-radius: 3px;
     padding: 8px;
     border: outset;
     margin: 5px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 }
 .button-cart:hover{
+    background: white;  
+    color: #40367C;
+}
+.to_cart{
+
+}
+
+.next-back{
+    display: flex;
+    justify-content: center;
+}
+.back{
+    margin:5px;
+    background-color: #2A2F57;
+    color: white;
+    margin: 5px;
+    text-decoration: wavy;
+    border: outset;
+    padding: 7px;
+}
+.back:hover{
     background: white;  
     color: #40367C;
 }
