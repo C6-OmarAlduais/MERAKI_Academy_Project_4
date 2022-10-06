@@ -51,7 +51,23 @@ const Cart = () => {
     return total;
   };
 
-
+  const deleteAll = async() => {
+    try {
+        await axios.delete(`http://localhost:5000/cart`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+  }
+  const buy = () => {
+    deleteAll()
+    getAllItems()
+}
+useEffect(() => {
+   
+  
+}, [buy]);
 
   return (
     <div className="main">
@@ -82,9 +98,10 @@ const Cart = () => {
       })}
 
       <div>
-      {cartProducts.length>0 && <h3 className="total">total {totalPrice()}$</h3>}
+      {<h3 className="total">total {totalPrice()}$</h3>}
       </div>
       <div>
+      {<button onClick={buy}>Buy</button>}
      
       </div>
     </div>
