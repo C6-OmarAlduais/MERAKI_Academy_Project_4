@@ -50,13 +50,8 @@ const Cart = () => {
     }, 0);
     return total;
   };
-  const buy = () => {
-      deleteCart()
-}
-useEffect(() => {
-   
-  
-}, [buy]);
+
+
 
   return (
     <div className="main">
@@ -87,10 +82,10 @@ useEffect(() => {
       })}
 
       <div>
-        <h3 className="total">total {totalPrice()}$</h3>
+      {cartProducts.length>0 && <h3 className="total">total {totalPrice()}$</h3>}
       </div>
       <div>
-        <button onClick={buy}>Buy</button>
+     
       </div>
     </div>
   );

@@ -169,7 +169,7 @@ const deleteProductById = (req, res) => {
     });
 };
 
-//--------------------------------------delete all
+
 
 module.exports = {
   addNewProduct,
@@ -178,4 +178,5 @@ module.exports = {
   updateProductById,
   deleteProductById,
   search,
+  
 };
