@@ -10,6 +10,7 @@
     height: 400px;
     width: 200px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    background-color: white;
 }
 .product-img {
     width:120px;
@@ -39,5 +40,16 @@
     background: white;
     color: #40367C;
     border-color: #40367C;
+
+}
+.brand {
+    background-color: #40367C;
+    color: white;
+    padding: 3px;
+    margin: 0;
+}
+.product-name{
+    color: #2A2F57;
+    padding: 5px;
 
 }

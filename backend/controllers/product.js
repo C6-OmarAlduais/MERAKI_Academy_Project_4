@@ -34,7 +34,7 @@ const addNewProduct = (req, res) => {
 };
 //--------------------------------- get all products
 const getAllProducts = (req, res) => {
-  const userId = req.token.userId;
+//   const userId = req.token.userId;
   const page = req.query.p || 0;
   const productPerPage = 6;
 
@@ -48,7 +48,7 @@ const getAllProducts = (req, res) => {
       res.status(200).json({
         success: true,
         message: "All the products",
-        userId: userId,
+        // userId: userId,
         products,
       });
     })

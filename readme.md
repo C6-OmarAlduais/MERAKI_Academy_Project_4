@@ -67,13 +67,23 @@ npm start
 ```
 
 Now app ready to use
-<img width=200px height=70px src="./E-Markt 2.png" alt="Project logo"></a>
+<img width=200px height=70px src="./E-Markt 2.png" alt="home page">
 
 ## 🎈 Usage <a name="usage"></a>
 
 - You have to register to navigate our web app
+You can click on the **Login** then choose register
 
-- You can click on the **Home** tab provided in the navigation bar to view the home section
+<img width=200px height=70px src="./Register.png" alt="register page">
+
+- You can click on the **Login** again to log in 
+
+<img width=200px height=70px src="./Login.png" alt="login page">
+
+- You can click on the **Home** tab see all our products and to search
+
+<img width=200px height=70px src="./Home.png" alt="home page">
+
 - You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
 
 ## ⛏️ Built Using <a name = "built_using"></a>

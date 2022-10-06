@@ -32,42 +32,24 @@ const Products = () => {
     return currentQty;
   };
 
-  //   let page = 0
+
   const nextPage = () => {
     setPage(page + 1);
-    // if(page > allProducts.length){
-    //     page =  allProducts.length
-    //     getAllProducts()
-    //     return page
-
-    // } else{
-    //     page=  page + 1
-    //     console.log(page);
-    //     getAllProducts()
-    //     return page
-    // }
+  
   };
 
   const prePage = () => {
     setPage(page - 1);
-    // if(page <= 0){
-    //     page = 0
-    //     getAllProducts()
-    //     return page
-    // } else{
-    // // page = page - 1
-    // // getAllProducts()
-    // // return page
-    // // }
+   
   };
 
   const getAllProducts = async () => {
     setLoading(true);
     const { data } = await axios.get(
-      `http://localhost:5000/products/?p=${page}`,
+      `http://localhost:5000/products/?p=${page}`/* ,
       {
         headers: { Authorization: `Bearer ${token}` },
-      }
+      } */
     );
     const { products } = data;
     setAllProducts(products);
@@ -136,7 +118,7 @@ const Products = () => {
                       className="count"
                       type="number"
                       min="0"
-                      value={product[product._id] || 0}
+                      // value={product[product._id] || 0}
                       onChange={(e) => productsQnt(product._id, e.target.value)}
                     ></input>
                     <button

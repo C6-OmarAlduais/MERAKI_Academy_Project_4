@@ -72,8 +72,8 @@ useEffect(() => {
       {cartProducts?.map((item, i) => {
         return (
           <div key={i} className="items">
-            <h2>{item.productId.brand}</h2>
-            <h3>{item.productId.productName}</h3>
+            <h2 className="brand">{item.productId.brand}</h2>
+            <h3 className="product-name">{item.productId.productName}</h3>
             <img
               className="product-img"
               src={item.productId.image}
@@ -98,7 +98,7 @@ useEffect(() => {
       {cartProducts.length>0 && <h3 className="total">total {totalPrice()}$</h3>}
       </div>
       <div>
-      {cartProducts.length>0 &&  <button onClick={buy}>Buy</button>}
+      {cartProducts.length>0 &&  <button  className="button-delete1" onClick={buy}>Buy</button>}
       {cartProducts.length <= 0 &&<h2 className="buy-message">Thank you for shopping with us! You will receive your products in three days</h2>}
       </div>
     </div>
