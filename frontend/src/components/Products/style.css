@@ -19,7 +19,10 @@
     display: grid;
     grid-template-columns: repeat(3, 200px);
     justify-content:space-evenly ;
-    background-color: #DEE2FF
+    background-color: #DEE2FF;
+    background-image: url(https://i.pinimg.com/originals/2a/be/e4/2abee4e7a6adacf15aa8ee6c8931c92e.jpg);
+    background-size: contain;
+    background-attachment: fixed;
    
     ;
 }
@@ -43,7 +46,7 @@ h2{
     padding: 3px;
 }
 h3{
-    background-color: #BDC4FF;
+    background-color: #DEE2FF;
     color: #2A2F57;
     padding: 5px;
 

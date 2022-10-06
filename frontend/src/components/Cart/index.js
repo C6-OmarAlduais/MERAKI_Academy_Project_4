@@ -12,13 +12,11 @@ const Cart = () => {
 
   //--------------------------
   const getAllItems = () => {
-    console.log(token);
     axios
       .get("http://localhost:5000/cart/", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        console.log(res.data.products);
         setCartProducts(res.data.products);
       })
       .catch((err) => {
@@ -72,7 +70,6 @@ useEffect(() => {
   return (
     <div className="main">
       {cartProducts?.map((item, i) => {
-        console.log(item);
         return (
           <div key={i} className="items">
             <h2>{item.productId.brand}</h2>

@@ -45,3 +45,9 @@
     background-color: white;
     fill:#2A2F57
 }
+span{
+    margin-left: -23px;
+    margin-right: 8px;
+    color: #40367C;
+    font-weight: bolder;
+}

@@ -11,9 +11,9 @@ import "./style.css";
 //---------------------------
 
 const Products = () => {
-
+  const [products, setProducts] = useState({});
   const [loading, setLoading] = useState(false);
-
+  const [page, setPage] = useState(0);
 
   //-----------------------------
 
@@ -31,43 +31,46 @@ const Products = () => {
     console.log("currentQty", currentQty);
     return currentQty;
   };
-  
 
-  let page = 0 
-  const nextPage = ()=> {
-    if(page > allProducts.length){
-        page =  allProducts.length
-        getAllProducts()
-        return page
-        
-    } else{
-        page=  page + 1 
-        console.log(page);
-        getAllProducts()
-        return page
-    }
-    
-    
-  }
+  //   let page = 0
+  const nextPage = () => {
+    setPage(page + 1);
+    // if(page > allProducts.length){
+    //     page =  allProducts.length
+    //     getAllProducts()
+    //     return page
+
+    // } else{
+    //     page=  page + 1
+    //     console.log(page);
+    //     getAllProducts()
+    //     return page
+    // }
+  };
+
   const prePage = () => {
-    if(page <= 0){
-        page = 0
-        getAllProducts()
-        return page
-    } else{
-    page = page - 1
-    getAllProducts()
-    return page
-    }
-  }
+    setPage(page - 1);
+    // if(page <= 0){
+    //     page = 0
+    //     getAllProducts()
+    //     return page
+    // } else{
+    // // page = page - 1
+    // // getAllProducts()
+    // // return page
+    // // }
+  };
 
   const getAllProducts = async () => {
     setLoading(true);
-    const res = await axios.get(`http://localhost:5000/products/?p=${page}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    setAllProducts(res.data.products);
+    const { data } = await axios.get(
+      `http://localhost:5000/products/?p=${page}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+    const { products } = data;
+    setAllProducts(products);
     setLoading(false);
   };
 
@@ -81,20 +84,23 @@ const Products = () => {
   };
 
   useEffect(() => {
-    if (!allProducts.length) getAllProducts();
-  }, []);
-  const [products, setProducts] = useState(0);
+    getAllProducts();
+  }, [page]);
+
+  const productsQnt = (id, qnt) => {
+    setProducts({ ...products, [id]: qnt });
+  };
 
   const addToCart = (id) => {
-    console.log(products[id]);
+    console.log("products", products[id]);
     axios
       .post(
         "http://localhost:5000/cart/",
-        { productId: id, qnt: products },
+        { productId: id, qnt: products[id] },
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((res) => {
-        console.log(res);
+        console.log(products);
       })
       .catch((err) => {
         console.log(err);
@@ -126,19 +132,19 @@ const Products = () => {
                     <p>{product.price}$</p>
                   </div>
                   <div className="to_cart">
-                  <input
-                    className="count"
-                    type="number"
-                    min="0"
-                    // value={0}
-                    onChange={(e) => setProducts(e.target.value)}
-                  ></input>
-                  <button
-                    className="button-cart"
-                    onClick={() => addToCart(product._id)}
-                  >
-                    Add to Cart
-                  </button>
+                    <input
+                      className="count"
+                      type="number"
+                      min="0"
+                      value={product[product._id] || 0}
+                      onChange={(e) => productsQnt(product._id, e.target.value)}
+                    ></input>
+                    <button
+                      className="button-cart"
+                      onClick={() => addToCart(product._id)}
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               );
@@ -146,9 +152,15 @@ const Products = () => {
           )}
         </div>
         <div className="next-back">
-      <h4 onClick={prePage} className="back"> {`<<`}  Pre ----- </h4>
-<h4 onClick={nextPage} className="back"> ----- Next {`>>`} </h4>
-</div>
+          {page > 0 && (
+            <h4 onClick={prePage} className="back">
+              {`<<`} Pre -----
+            </h4>
+          )}
+          <h4 onClick={nextPage} className="back">
+            ----- Next {`>>`}
+          </h4>
+        </div>
       </div>
     </div>
   );

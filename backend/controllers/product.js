@@ -1,7 +1,8 @@
 const productModel = require("../models/productSchema");
 //----------------------------------- add new product
 const addNewProduct = (req, res) => {
-  const { productName, brand, image, description, price, comments, category } = req.body;
+  const { productName, brand, image, description, price, comments, category } =
+    req.body;
   const userId = req.token.userId;
 
   const productInstance = new productModel({
@@ -34,8 +35,8 @@ const addNewProduct = (req, res) => {
 //--------------------------------- get all products
 const getAllProducts = (req, res) => {
   const userId = req.token.userId;
-  const page = req.query.p || 0
-  const productPerPage = 6
+  const page = req.query.p || 0;
+  const productPerPage = 6;
 
   productModel
     .find({})
@@ -60,33 +61,34 @@ const getAllProducts = (req, res) => {
     });
 };
 
-  //--------------------------------------- regex
-  const search = (req, res) => {
-    const regex = new RegExp(req.query.productName,'gi')
-    console.log(regex);
-    productModel.find({productName:{$regex:regex}})
-    .then((result)=>{
-res.status(200).json({
-    success:true,
-    message:`This is the product`,
-    result
-})
+//--------------------------------------- regex
+const search = (req, res) => {
+  const regex = new RegExp(req.query.productName, "gi");
+  console.log(regex);
+  productModel
+    .find({ productName: { $regex: regex } })
+    .then((result) => {
+      res.status(200).json({
+        success: true,
+        message: `This is the product`,
+        result,
+      });
     })
-    .catch((err)=>{
-res.status(500).json({
-    success:false,
-    message:`Server error`,
-    err:err.message
-})
-    })
-}
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server error`,
+        err: err.message,
+      });
+    });
+};
 
 //---------------------------------- get product by Id
 const getProductById = (req, res) => {
   let _id = req.query.id;
   productModel
     .find({ _id })
-    .populate('comments')
+    .populate("comments")
     .exec()
     .then((product) => {
       if (!product) {
@@ -111,22 +113,22 @@ const getProductById = (req, res) => {
 //------------------------------------------udpate product by id
 const updateProductById = (req, res) => {
   const _id = req.params.id;
-//   console.log(_id);
+  //   console.log(_id);
   const filter = req.body;
- // console.log(Object.keys(filter));
+  // console.log(Object.keys(filter));
   Object.keys(filter).forEach((key) => {
     filter[key] == "" && delete filter[key];
   });
   productModel
-    .findOneAndUpdate({_id}, req.body, { new: true })
+    .findOneAndUpdate({ _id }, req.body, { new: true })
     .then((product) => {
-        if(!product){
-            res.status(404).json({
-                success:false, 
-                message:`The product: ${_id} isn't found`,
-            })
-        }
-       // console.log('product:', product)
+      if (!product) {
+        res.status(404).json({
+          success: false,
+          message: `The product: ${_id} isn't found`,
+        });
+      }
+      // console.log('product:', product)
       res.status(201).json({
         success: true,
         message: `Product updated`,
@@ -169,8 +171,6 @@ const deleteProductById = (req, res) => {
     });
 };
 
-
-
 module.exports = {
   addNewProduct,
   getAllProducts,
@@ -178,5 +178,4 @@ module.exports = {
   updateProductById,
   deleteProductById,
   search,
-  
 };

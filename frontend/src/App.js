@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Register from "./components/Register";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import Login from "./components/Login";
 import Products from "./components/Products";
 import ProductById from "./components/ProductById";
@@ -34,7 +34,7 @@ function App() {
         setAllProducts,
         cartProducts,
         setCartProducts,
-        search, 
+        search,
         setSearch,
       }}
     >
