@@ -20,6 +20,7 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [allProducts, setAllProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+  const [search, setSearch] = useState("");
 
   //--------------------------------------------
   return (
@@ -33,6 +34,8 @@ function App() {
         setAllProducts,
         cartProducts,
         setCartProducts,
+        search, 
+        setSearch,
       }}
     >
       <div className="App">

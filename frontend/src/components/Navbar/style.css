@@ -4,6 +4,7 @@
     background-color: #40367C;
     padding: 5px;
     padding-left: 15px;
+    /* background-image: url("../../../public/image2.png"); */
 }
 .bar-link {
     background-color: #2A2F57;
@@ -19,9 +20,17 @@
 }
 .nav-items{
     align-self: center;
+   
 }
 .img-header{
     margin-right: auto;
+    color: white;
+    font-family: "Trebuchet MS" , Verdana, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: x-large;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
 }
 .cart2{
     background-color: #2A2F57;

@@ -1,24 +1,15 @@
-import {React, useContext, useState} from 'react';
+import {React, useContext} from 'react';
 import { appContext } from '../../App';
 
 const Search = () => {
-  const [search, setSearch] = useState("");
+  
 
-    const { token, setAllProducts, allProducts } = useContext(appContext);
+    const {  allProducts, search, } = useContext(appContext);
     return (
         <div>
         <div>
           <div className="search1">
-            <div className="search">
-              <input
-                className="search-input"
-                onChange={(e) => {
-                  setSearch(e.target.value);
-                }}
-                type={"text"}
-                placeholder={"Search..."}
-              ></input>
-            </div>
+            
           </div>
           <div className="content">
             {search && allProducts
@@ -26,7 +17,7 @@ const Search = () => {
                 if (search === "") {
                   return val;
                 } else if (
-                  val.productName.toLowerCase().includes(search.toLowerCase())
+                  val.description.toLowerCase().includes(search.toLowerCase())
                 ) {
                   return val;
                 }

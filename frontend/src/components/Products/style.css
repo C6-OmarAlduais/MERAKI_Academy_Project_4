@@ -1,6 +1,7 @@
 .search {
-    background-color: #BDC4FF;
-    padding: 5px;
+    /* background-color: #BDC4FF; */
+    padding: 7px;
+    margin-right: auto;
 }
 .search1{
     text-align-last: left;
@@ -27,6 +28,7 @@
     border-color: #40367C;
     margin-top: 10px;
     margin-bottom: 20px;
+    background: white;
    
 }
 .product-img{
@@ -85,6 +87,7 @@ h3{
 .next-back{
     display: flex;
     justify-content: center;
+    background-color: #DEE2FF;
 }
 .back{
     margin:5px;

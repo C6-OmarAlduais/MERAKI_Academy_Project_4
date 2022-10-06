@@ -34,14 +34,15 @@ const Products = () => {
   
 
   let page = 0 
-  const nextPage = () => {
+  const nextPage = ()=> {
     if(page > allProducts.length){
-        page = 0
+        page =  allProducts.length
         getAllProducts()
         return page
         
     } else{
-        page = page + 1 
+        page=  page + 1 
+        console.log(page);
         getAllProducts()
         return page
     }

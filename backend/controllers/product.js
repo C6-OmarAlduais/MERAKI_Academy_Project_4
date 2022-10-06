@@ -169,6 +169,8 @@ const deleteProductById = (req, res) => {
     });
 };
 
+//--------------------------------------delete all
+
 module.exports = {
   addNewProduct,
   getAllProducts,
