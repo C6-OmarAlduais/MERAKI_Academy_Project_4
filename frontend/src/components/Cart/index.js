@@ -99,8 +99,7 @@ useEffect(() => {
       </div>
       <div>
       {cartProducts.length>0 &&  <button onClick={buy}>Buy</button>}
-      {cartProducts.length <= 0 &&<h2>Thank you for shopping with us!</h2>}
-     {cartProducts.length<=0 && <h3>You will receive your products in three days</h3>}
+      {cartProducts.length <= 0 &&<h2 className="buy-message">Thank you for shopping with us! You will receive your products in three days</h2>}
       </div>
     </div>
   );

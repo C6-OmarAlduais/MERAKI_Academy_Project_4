@@ -120,8 +120,8 @@ const Products = () => {
                   onClick={() => handleClick(product._id)}
                   key={i}
                 >
-                  <h2>{product.brand}</h2>
-                  <h3>{product.productName}</h3>
+                  <h2 className="brand">{product.brand}</h2>
+                  <h3 className="product-name">{product.productName}</h3>
                   <img
                     className="product-img"
                     src={product.image}

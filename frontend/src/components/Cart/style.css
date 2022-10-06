@@ -34,3 +34,10 @@
     background: white;  
     color: #40367C;
 }
+.buy-message{
+    border: solid;
+    background: white;
+    color: #40367C;
+    border-color: #40367C;
+
+}

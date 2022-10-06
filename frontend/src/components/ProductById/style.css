@@ -7,21 +7,22 @@
     border-color: #40367C;
     margin-top: 10px;
     margin-bottom: 20px;
-    height: 350px;
+    height: 300px;
     width: 170px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    background-color: white;
 }
 .product-img{
     width: -webkit-fill-available;
 }
-h2{
+.brand{
     background-color: #40367C;
     color: white;
     padding: 3px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 }
-h3{
-    background-color: #DEE2FF;
+.product-name{
+    /* background-color: #DEE2FF; */
     color: #2A2F57;
     padding: 5px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;

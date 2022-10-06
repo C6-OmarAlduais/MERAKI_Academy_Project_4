@@ -1,13 +1,13 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="Project logo"></a>
+ <img width=200px height=70px src="./E-Markt.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">MERAKI</h3>
+<h3 align="center">E-Markt</h3>
 
 ---
 
-<p align="center"> An awesome Project to descripe README 
+<p align="center"> E-Markt is an online markt, which offers the best services to give our custmors the best online shopping experience.
     <br> 
 <a href=''>Demo</a>
     <br> 
@@ -27,7 +27,7 @@
 
 Write about 1-2 paragraphs describing the purpose of your project.
 
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
+Ex. Are you looking for a quick and easy way to buy a new smartphone or laptop? The **(E-Markt)** is the greatest and most accurate application to do this for you. It helps you to **(buy computers and mobiles)**. The **(E-Markt)** provides a simple design to ensure having the best user experience.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -45,7 +45,7 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repo to your local machine using git bash.
 
 ```
-git clone https://github.com/your_username_/Project-Name.git
+git clone https://github.com/C6-OmarAlduais/MERAKI_Academy_Project_4.git
 ```
 
 2. Install packeges repeat this step in backend and frontend folder
@@ -63,17 +63,16 @@ npm run dev
 4. Run application using git bash inside frontend folder
 
 ```
-npm run start
+npm start
 ```
 
 Now app ready to use
+<img width=200px height=70px src="./E-Markt 2.png" alt="Project logo"></a>
 
 ## 🎈 Usage <a name="usage"></a>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+- You have to register to navigate our web app
 
-Ex.
-- You don't have to register to navigate our web app
 - You can click on the **Home** tab provided in the navigation bar to view the home section
 - You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
 

@@ -82,8 +82,8 @@ const addComment = () => {
     return (
         <div className='main'>
         <div className="item-by-id">
-            <h2>{product.brand}</h2>
-            <h3>{product.productName}</h3>
+            <h2 className='brand'>{product.brand}</h2>
+            <h3 className='product-name'>{product.productName}</h3>
             <img className="product-img" src={product.image} alt={product.productName}></img>
             <div className="price-desc">
               <p>{product.description}</p>
