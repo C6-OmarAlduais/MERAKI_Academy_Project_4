@@ -105,3 +105,32 @@
     background: white;  
     color: #40367C;
 }
+
+@media (max-width: 767px) { 
+    .content{
+        display: grid;
+        grid-template-columns: repeat(1, 230px);
+       
+       
+        ;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) { 
+    .content{
+        display: grid;
+        grid-template-columns: repeat(2, 230px);
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) { 
+    .content{
+        display: grid;
+        grid-template-columns: repeat(3, 230px);
+    }
+}
+@media (min-width: 1200px) { 
+    .content{
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+    }
+}
+
