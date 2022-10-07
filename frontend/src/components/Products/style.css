@@ -110,8 +110,8 @@
     .content{
         display: grid;
         grid-template-columns: repeat(1, 230px);
-   
     }
+    .search-input{width: 50px;}
 }
 @media (min-width: 768px) and (max-width: 991px) { 
     .content{
