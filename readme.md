@@ -71,7 +71,13 @@ Now app ready to use
 
 ## 🎈 Usage <a name="usage"></a>
 
-- You have to register to navigate our web app
+
+- You can always click on the **Home** tab see all our products and to search
+
+<img width=200px height=70px src="./Home.png" alt="home page">
+
+- You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
+- You can navigate our web app with out register
 You can click on the **Login** then choose register
 
 <img width=200px height=70px src="./Register.png" alt="register page">
@@ -80,11 +86,9 @@ You can click on the **Login** then choose register
 
 <img width=200px height=70px src="./Login.png" alt="login page">
 
-- You can click on the **Home** tab see all our products and to search
+- After adding the products to cart. You can go now to the cart and confirm your purshase or delete some items form your list.
+<img width=200px height=70px src="./Cart.png" alt="login page">
 
-<img width=200px height=70px src="./Home.png" alt="home page">
-
-- You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -96,11 +100,11 @@ You can click on the **Login** then choose register
 ## User Story <a name = "#user_story"></a>
 
 Your trello board link
-<a href=''>Trello</a>
+<a href='https://trello.com/b/NXLiooYI/projekt-4'>Trello</a>
 
 ## Data Flow <a name = "#data_flow"></a>
 
-<img width=200px height=200px src="https://cacoo.com/assets/site/img/templates/screenshots/er-database-diagram.png" alt="Diagram"></a>
+<img width=200px height=200px src="./Project 4 Diagram.png" alt="Diagram"></a>
 
 ## ⚠️ Guided By <a name = "guided_by"></a>
 

@@ -21,6 +21,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [productsInCart, setProductsInCart] = useState(0);
 
   //--------------------------------------------
   return (
@@ -36,6 +37,8 @@ function App() {
         setCartProducts,
         search,
         setSearch,
+        productsInCart, 
+        setProductsInCart
       }}
     >
       <div className="App">

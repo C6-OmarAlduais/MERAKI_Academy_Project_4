@@ -17,7 +17,7 @@ const Products = () => {
 
   //-----------------------------
 
-  const { token, setAllProducts, allProducts, cartProducts } =
+  const { token, setAllProducts, allProducts, cartProducts, setProductsInCart } =
     useContext(appContext);
 
   //--------------------------- get all products
@@ -70,8 +70,16 @@ const Products = () => {
   }, [page]);
 
   const productsQnt = (id, qnt) => {
-    setProducts({ ...products, [id]: qnt });
+    setProducts({ ...products, [id]: +qnt });
+    console.log(Object.values(products));
   };
+
+  const productInCart = Object.values(products)
+  const num = productInCart.reduce((acc, product)=>{
+acc = acc + product
+return acc
+  },0)
+  setProductsInCart(num);
 
   const addToCart = (id) => {
     console.log("products", products[id]);

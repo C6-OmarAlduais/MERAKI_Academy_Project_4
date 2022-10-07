@@ -8,7 +8,7 @@ import { appContext } from "../../App";
 
 const Navbar = () => {
     const navigate = useNavigate()
-    const {setIsLogedIn, setSearch, setToken, token} = useContext(appContext)
+    const {setIsLogedIn, setSearch, setToken, token, productsInCart} = useContext(appContext)
     
     const toLogout =()=>{
         setIsLogedIn(false)
@@ -18,10 +18,13 @@ const Navbar = () => {
       }
     return (
         <div className="nav">
+      <div className="cart1">
+          <p className="cart-num">{productsInCart}</p>
             <svg onClick={() => navigate(`/cart`)} xmlns="http://www.w3.org/2000/svg" width="20" height="20"  className="cart2" viewBox="0 0 16 16">
-  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
 
 </svg>
+</div>
              {token === ''? (<Link className="bar-link" to={'/login'}>Login</Link>):(<Link onClick={toLogout} className="bar-link" to={'/login'}>Sing out</Link>)}
         <div className="nav-items">
             <Link className="bar-link" to={'/home'}>Home</Link>
