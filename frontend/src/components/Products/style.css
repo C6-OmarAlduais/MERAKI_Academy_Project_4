@@ -18,12 +18,13 @@
 .content{
     display: grid;
     grid-template-columns: repeat(3, 200px);
-    justify-content:space-evenly ;
+    justify-content:space-between ;
     background-color: #DEE2FF;
     background-image: url(https://i.pinimg.com/originals/2a/be/e4/2abee4e7a6adacf15aa8ee6c8931c92e.jpg);
     background-size: contain;
     background-attachment: fixed;
-   
+    margin: 10px; 
+      
     ;
 }
 .item{
@@ -109,26 +110,27 @@
 @media (max-width: 767px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(1, 230px);
+        grid-template-columns: repeat(2, 270px);
     }
     .search-input{width: 50px;}
 }
 @media (min-width: 768px) and (max-width: 991px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(2, 230px);
+        grid-template-columns: repeat(3, 230px);
     }
 }
 @media (min-width: 992px) and (max-width: 1199px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(3, 230px);
+        grid-template-columns: repeat(3, 300px);
     }
 }
 @media (min-width: 1200px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(3, 300px);
+        grid-template-columns: repeat(3, 350px);
+        
     }
 }
 

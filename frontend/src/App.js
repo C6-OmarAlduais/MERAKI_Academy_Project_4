@@ -10,6 +10,7 @@ import UpdateProduct from "./components/Admins/UpdateProduct";
 import CreateProduct from "./components/Admins/Create";
 import Cart from "./components/Cart";
 import Search from "./components/Search";
+import Footer from "./components/Footer";
 //--------------------------------------------
 export const appContext = createContext();
 
@@ -54,6 +55,7 @@ function App() {
           <Route path="/create" element={<CreateProduct />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer/>
       </div>
     </appContext.Provider>
   );

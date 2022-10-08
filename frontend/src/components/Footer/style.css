@@ -1,0 +1,18 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    background-color: #40367C;
+    color: white;
+    justify-content: space-evenly;
+    text-align: -webkit-left;
+    padding: 0px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.main-link{
+    font-size: medium;
+    font-weight: bolder;
+}
+.sub-links{
+    font-size: small;
+}
