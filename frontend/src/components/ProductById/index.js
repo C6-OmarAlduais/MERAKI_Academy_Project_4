@@ -80,7 +80,7 @@ const addComment = () => {
 
 
     return (
-        <div className='main'>
+        <div className='main-id'>
         <div className="item-by-id">
             <h2 className='brand'>{product.brand}</h2>
             <h3 className='product-name'>{product.productName}</h3>
@@ -91,6 +91,7 @@ const addComment = () => {
               </div>
               </div>
             <p>{product.comments && product.comments.comment}</p>
+            <div className='inputs-buttons'>
             <div className='all-buttons'>
          <div className='comments'>
             <input className='input-comment' onChange={(e)=>{setComment(e.target.value)}} type={'text'} placeholder={'Write Your Comment...'}></input>
@@ -100,7 +101,7 @@ const addComment = () => {
             <button className='button-by-id' onClick={()=>navigate(`/update/${id}`)}>Update</button>
             <button className='button-by-id' onClick={deleteProductById}>Delete</button>
             <button className='button-by-id' onClick={()=>navigate(`/create`)}>Create</button>
-
+            </div>
             </div>
             </div>
         </div>

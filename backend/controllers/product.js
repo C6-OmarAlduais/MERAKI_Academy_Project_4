@@ -36,7 +36,7 @@ const addNewProduct = (req, res) => {
 const getAllProducts = (req, res) => {
 //   const userId = req.token.userId;
   const page = req.query.p || 0;
-  const productPerPage = 8;
+  const productPerPage = 9;
 
   productModel
     .find({})

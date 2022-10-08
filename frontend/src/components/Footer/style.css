@@ -12,9 +12,10 @@
 .main-link{
     font-size: medium;
     font-weight: bolder;
+    margin-bottom: 0px;
 }
 .sub-links{
-    font-size: small;
+    font-size: x-small;
 }
 
 @media (max-width: 535px) { 

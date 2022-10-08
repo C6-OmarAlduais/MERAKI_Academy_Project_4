@@ -1,4 +1,6 @@
-.main{
+.main-id{
+    display: flex;
+    flex-direction: column;
     padding: 50px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
 }
@@ -61,6 +63,13 @@
 .all-buttons{
     display: flex;
     flex-direction: column;
+    text-align-last: left;
+}
+.inputs-buttons{
+    background-color: white;
+    height: fit-content;
+    padding: 20px;
+    width: fit-content;
 }
 
 
@@ -78,7 +87,7 @@
 }
 @media (min-width: 1200px) { 
     .item-by-id{
-        height: 500px;
-        width: 370px;
+        height: 300px;
+        width: 347px;
     }
 }
