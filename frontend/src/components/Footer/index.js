@@ -3,7 +3,7 @@ import "./style.css";
 
 const Footer = () => {
   return (
-    <div className="main">
+    <div className="main-footer">
       <h3 className="main-link">Contact Us
       <div className="sub-links">
         <p>Adrress: Amman/Al-Madinah-Street 132</p>
@@ -14,12 +14,6 @@ const Footer = () => {
       </h3>
 
      
-      <h3 className="main-link">About Us
-      <div className="sub-links">
-        <p>Careers</p>
-        <p>Blog</p>
-      </div>
-      </h3>
       <h3 className="main-link">Let Us Help YOU
       <div className="sub-links">
         <p>Emarkt and COVID-19</p>
@@ -28,6 +22,12 @@ const Footer = () => {
       </div>
       </h3>
 
+      <h3 className="main-link">About Us
+      <div className="sub-links">
+        <p>Careers</p>
+        <p>Blog</p>
+      </div>
+      </h3>
    
     </div>
   );

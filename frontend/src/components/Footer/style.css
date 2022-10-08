@@ -1,13 +1,13 @@
-.main{
-    display: flex;
-    flex-direction: row;
+.main-footer{
+    display: grid;
+    grid-template-columns: (3, 130);
     background-color: #40367C;
     color: white;
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: -webkit-left;
     padding: 0px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .main-link{
     font-size: medium;
@@ -15,4 +15,29 @@
 }
 .sub-links{
     font-size: small;
+}
+
+@media (max-width: 535px) { 
+    .main-footer{
+        display: grid;
+        grid-template-columns: repeat(1, 230px);
+        justify-content: center;
+    }
+   
+}
+
+@media (min-width: 535px) and (max-width: 767px) { 
+    .main-footer{
+        display: grid;
+        grid-template-columns: repeat(2, 230px);
+    }
+   
+}
+
+@media (min-width: 767px) { 
+    .main-footer{
+        display: grid;
+        grid-template-columns: repeat(3, 230px);
+    }
+   
 }

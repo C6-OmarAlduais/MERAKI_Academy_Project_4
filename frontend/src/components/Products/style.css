@@ -107,13 +107,24 @@
     color: #40367C;
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 535px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(2, 270px);
+        grid-template-columns: repeat(1, 230px);
+        justify-content: center;
     }
     .search-input{width: 50px;}
 }
+
+@media (min-width: 535px) and (max-width: 767px) { 
+    .content{
+        display: grid;
+        grid-template-columns: repeat(2, 230px);
+    }
+    .search-input{width: 50px;}
+}
+
+
 @media (min-width: 768px) and (max-width: 991px) { 
     .content{
         display: grid;
@@ -123,13 +134,13 @@
 @media (min-width: 992px) and (max-width: 1199px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(3, 300px);
+        grid-template-columns: repeat(3, 230px);
     }
 }
 @media (min-width: 1200px) { 
     .content{
         display: grid;
-        grid-template-columns: repeat(3, 350px);
+        grid-template-columns: repeat(4, 230px);
         
     }
 }
