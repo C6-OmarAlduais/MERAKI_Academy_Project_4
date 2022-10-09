@@ -15,6 +15,7 @@
     width: 200px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     background-color: white;
+    box-shadow: 10px 10px 10px #000000;
 }
 .product-img {
     width:120px;
@@ -27,6 +28,7 @@
     color: #2A2F57;
     margin: 4px;
     margin-right: 12px;
+    box-shadow: 5px 5px 10px #000000;
 }
 .button-delete1 {
     background: #2A2F57;
@@ -36,6 +38,7 @@
     padding: 6px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     border: outset;
+    box-shadow: 5px 5px 10px #000000;
 }
 .button-delete1:hover{
     background: white;  

@@ -13,6 +13,7 @@
     width: 170px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     background-color: white;
+    box-shadow: 10px 10px 10px #000000;
 }
 .product-img{
     width: -webkit-fill-available;

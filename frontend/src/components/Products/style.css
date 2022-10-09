@@ -24,8 +24,9 @@
     background-size: contain;
     background-attachment: fixed;
     margin: 10px; 
-      
-    ;
+    margin-left: 50px;
+    margin-right: 50px;
+  
 }
 .item{
     border: solid;
@@ -33,6 +34,7 @@
     margin-top: 10px;
     margin-bottom: 20px;
     background: white;
+    box-shadow: 10px 10px 10px #000000;
    
 }
 .product-img{
@@ -80,6 +82,7 @@
     border: outset;
     margin: 5px;
     font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    /* box-shadow: 5px 5px 10px #1d1c1c; */
 }
 .button-cart:hover{
     background: white;  
@@ -101,6 +104,7 @@
     text-decoration: wavy;
     border: outset;
     padding: 7px;
+    box-shadow: 5px 5px 10px #000000;
 }
 .back:hover{
     background: white;  
