@@ -1,12 +1,12 @@
-*{
+* {
   height: auto;
 }
 .App {
   text-align: center;
   text-align: -webkit-center;
- font-size: .85em;
-font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
-background-image: url(https://i.pinimg.com/originals/2a/be/e4/2abee4e7a6adacf15aa8ee6c8931c92e.jpg);
-background-size: contain;
-background-attachment: fixed;
+  font-size: 0.85em;
+  font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+  background-image: url(https://i.pinimg.com/originals/2a/be/e4/2abee4e7a6adacf15aa8ee6c8931c92e.jpg);
+  background-size: contain;
+  background-attachment: fixed;
 }

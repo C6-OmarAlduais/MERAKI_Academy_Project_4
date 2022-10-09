@@ -17,8 +17,13 @@ const Products = () => {
 
   //-----------------------------
 
-  const { token, setAllProducts, allProducts, cartProducts, setProductsInCart } =
-    useContext(appContext);
+  const {
+    token,
+    setAllProducts,
+    allProducts,
+    cartProducts,
+    setProductsInCart,
+  } = useContext(appContext);
 
   //--------------------------- get all products
 
@@ -32,21 +37,18 @@ const Products = () => {
     return currentQty;
   };
 
-
   const nextPage = () => {
     setPage(page + 1);
-  
   };
 
   const prePage = () => {
     setPage(page - 1);
-   
   };
 
   const getAllProducts = async () => {
     setLoading(true);
     const { data } = await axios.get(
-      `http://localhost:5000/products/?p=${page}`/* ,
+      `http://localhost:5000/products/?p=${page}` /* ,
       {
         headers: { Authorization: `Bearer ${token}` },
       } */
@@ -74,11 +76,11 @@ const Products = () => {
     console.log(Object.values(products));
   };
 
-  const productInCart = Object.values(products)
-  const num = productInCart.reduce((acc, product)=>{
-acc = acc + product
-return acc
-  },0)
+  const productInCart = Object.values(products);
+  const num = productInCart.reduce((acc, product) => {
+    acc = acc + product;
+    return acc;
+  }, 0);
   setProductsInCart(num);
 
   const addToCart = (id) => {

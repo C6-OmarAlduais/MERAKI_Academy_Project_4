@@ -38,8 +38,8 @@ function App() {
         setCartProducts,
         search,
         setSearch,
-        productsInCart, 
-        setProductsInCart
+        productsInCart,
+        setProductsInCart,
       }}
     >
       <div className="App">
@@ -55,7 +55,7 @@ function App() {
           <Route path="/create" element={<CreateProduct />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </appContext.Provider>
   );

@@ -1,18 +1,15 @@
-import {React, useContext} from 'react';
-import { appContext } from '../../App';
+import { React, useContext } from "react";
+import { appContext } from "../../App";
 
 const Search = () => {
-  
-
-    const {  allProducts, search, } = useContext(appContext);
-    return (
-        <div>
-        <div>
-          <div className="search1">
-            
-          </div>
-          <div className="content">
-            {search && allProducts
+  const { allProducts, search } = useContext(appContext);
+  return (
+    <div>
+      <div>
+        <div className="search1"></div>
+        <div className="content">
+          {search &&
+            allProducts
               .filter((val) => {
                 if (search === "") {
                   return val;
@@ -24,11 +21,7 @@ const Search = () => {
               })
               .map((product, i) => {
                 return (
-                  <div
-                    className="item"
-                   
-                    key={i}
-                  >
+                  <div className="item" key={i}>
                     <h2>{product.brand}</h2>
                     <h3>{product.productName}</h3>
                     <img
@@ -40,15 +33,13 @@ const Search = () => {
                       <p>{product.description}</p>
                       <p>{product.price}$</p>
                     </div>
-                    
                   </div>
                 );
               })}
-            
-          </div>
         </div>
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default Search;
