@@ -1,7 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const categorySchema = new mongoose.Schema({
-    category: {type: String}, 
-})
+  category: { type: String },
+});
 
-module.exports = mongoose.model('Category', categorySchema)
+module.exports = mongoose.model("Category", categorySchema);

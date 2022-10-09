@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const login = (req, res) => {
   const password = req.body.password;
   const email = req.body.email.toLowerCase();
-userModel
+  userModel
     .findOne({ email })
     .populate("role")
     .then(async (user) => {
@@ -23,7 +23,7 @@ userModel
             success: false,
             message: `The password you’ve entered is incorrect`,
           });
-        } 
+        }
         const payload = {
           userId: user._id,
           user: user.firstName,
@@ -39,7 +39,7 @@ userModel
           success: true,
           message: `Valid login credentials`,
           token: token,
-          role:user.role
+          role: user.role,
         });
       } catch (error) {
         throw new Error(error.message);
