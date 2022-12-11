@@ -25,7 +25,6 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
 
 Ex. Are you looking for a quick and easy way to buy a new smartphone or laptop? The **(E-Markt)** is the greatest and most accurate application to do this for you. It helps you to **(buy computers and mobiles)**. The **(E-Markt)** provides a simple design to ensure having the best user experience.
 

@@ -40,6 +40,7 @@
 }
 .product-img:hover {
   transform: scale(2);
+  cursor: pointer;
 }
 .brand {
   background-color: #40367c;
@@ -70,6 +71,9 @@
   font-weight: bolder;
   width: 40px;
 }
+.count:hover{
+    cursor: pointer;
+}
 .button-cart {
   background: #2a2f57;
   color: white;
@@ -84,8 +88,10 @@
 .button-cart:hover {
   background: white;
   color: #40367c;
+  cursor: pointer;
 }
-.to_cart {
+.to_cart:hover {
+    cursor: pointer;
 }
 
 .next-back {
@@ -105,6 +111,7 @@
 .back:hover {
   background: white;
   color: #40367c;
+  cursor: pointer;
 }
 
 @media (max-width: 535px) {
